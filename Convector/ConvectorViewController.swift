@@ -10,7 +10,22 @@ import UIKit
 
 class ConvectorViewController: UIViewController {
     
-    override func viewDidLoad() {
+    override func viewWillLayoutSubviews() {
+        switch self.view.frame.width {
+        case 375.0:
+            firstMeasurePickerView.widthAnchor.constraint(equalToConstant: 94.0).isActive = true
+            secondMeasurePickerView.widthAnchor.constraint(equalToConstant: 94.0).isActive = true
+            displayStackView.heightAnchor.constraint(equalToConstant: 177).isActive = true
+        case 414.0:
+            firstMeasurePickerView.widthAnchor.constraint(equalToConstant: 103.5).isActive = true
+            secondMeasurePickerView.widthAnchor.constraint(equalToConstant: 103.5).isActive = true
+            displayStackView.heightAnchor.constraint(equalToConstant: 218.5).isActive = true
+        default:
+            break
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         valueLabel.layer.addBorder(edge: .bottom, color: UIColor.white, thickness: 0.5)
     }
     
@@ -20,6 +35,7 @@ class ConvectorViewController: UIViewController {
     @IBOutlet weak var secondMeasurePickerView: UIPickerView!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var displayStackView: UIStackView!
     
     //MARK: @IBActions
     
