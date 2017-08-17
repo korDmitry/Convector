@@ -37,6 +37,13 @@ class ConvectorViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var displayStackView: UIStackView!
     
+    @IBOutlet weak var lengthButton: UIButton!
+    @IBOutlet weak var squareButton: UIButton!
+    @IBOutlet weak var liquidButton: UIButton!
+    @IBOutlet weak var weightButton: UIButton!
+    @IBOutlet weak var temperatureButton: UIButton!
+    
+    
     //MARK: @IBActions
     
     @IBAction func changeConvectionDirection(_ sender: UIButton) {
@@ -46,16 +53,25 @@ class ConvectorViewController: UIViewController {
     }
     
     @IBAction func changeMeasurementType(_ sender: UIButton) {
-        switch sender.currentTitle! {
-        case ButtonNames.length:
+        
+        lengthButton.layer.borderWidth = 0
+        squareButton.layer.borderWidth = 0
+        liquidButton.layer.borderWidth = 0
+        weightButton.layer.borderWidth = 0
+        temperatureButton.layer.borderWidth = 0
+        
+        sender.layer.borderWidth = 1
+        
+        switch sender {
+        case lengthButton:
             brain.measurementType = Length()
-        case ButtonNames.square:
+        case squareButton:
             brain.measurementType = Square()
-        case ButtonNames.liquid:
+        case liquidButton:
             brain.measurementType = Liquid()
-        case ButtonNames.weight:
+        case weightButton:
             brain.measurementType = Weight()
-        case ButtonNames.temperature:
+        case temperatureButton:
             brain.measurementType = Temperature()
         default:
             break

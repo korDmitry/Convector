@@ -447,14 +447,19 @@
                     <connections>
                         <outlet property="displayStackView" destination="DxM-re-oNJ" id="MoD-tI-QkK"/>
                         <outlet property="firstMeasurePickerView" destination="Gfj-d4-DiK" id="bI3-Q4-RgW"/>
+                        <outlet property="lengthButton" destination="HqL-yS-BAe" id="snJ-cG-hDA"/>
+                        <outlet property="liquidButton" destination="PUr-5q-IDh" id="tGR-AB-Byy"/>
                         <outlet property="resultLabel" destination="pwg-SD-FMW" id="nJ4-s7-eaz"/>
                         <outlet property="secondMeasurePickerView" destination="OuZ-OJ-Te0" id="iBA-Jl-2oo"/>
+                        <outlet property="squareButton" destination="1ay-Ew-MwD" id="lEx-F2-6B2"/>
+                        <outlet property="temperatureButton" destination="G4g-tg-04y" id="2mo-TB-C1P"/>
                         <outlet property="valueLabel" destination="I93-7K-WlV" id="P2D-gF-2Oa"/>
+                        <outlet property="weightButton" destination="HXV-Cl-CPN" id="UdP-ac-dI5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKS-4u-Z33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266" y="-3"/>
+            <point key="canvasLocation" x="56" y="12"/>
         </scene>
     </scenes>
 </document>

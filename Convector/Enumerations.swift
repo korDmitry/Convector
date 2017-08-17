@@ -13,13 +13,5 @@ enum Direction {
     case MetricToImperial
 }
 
-struct ButtonNames {
-    static let length = "Length"
-    static let square = "Square"
-    static let liquid = "Liquid"
-    static let weight = "Weight"
-    static let temperature = "Temperature"
-}
-
 
 
