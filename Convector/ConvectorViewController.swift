@@ -37,6 +37,7 @@ class ConvectorViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var displayStackView: UIStackView!
     
+    @IBOutlet weak var cleanButton: UIButton!
     @IBOutlet weak var lengthButton: UIButton!
     @IBOutlet weak var squareButton: UIButton!
     @IBOutlet weak var liquidButton: UIButton!
@@ -104,7 +105,16 @@ class ConvectorViewController: UIViewController {
     //MARK: Variables
     
     var brain: Brain = Brain()
-    var userInTheMiddleOfTyping: Bool = false
+    var userInTheMiddleOfTyping: Bool = false {
+        didSet {
+            if self.userInTheMiddleOfTyping {
+                cleanButton.setTitle("C", for: UIControlState.normal)
+            }
+            else {
+                cleanButton.setTitle("AC", for: UIControlState.normal)
+            }
+        }
+    }
     
     var valueLabelText: String {
         get {

@@ -445,6 +445,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cleanButton" destination="Dal-lA-eXg" id="Lpe-1a-kLK"/>
                         <outlet property="displayStackView" destination="DxM-re-oNJ" id="MoD-tI-QkK"/>
                         <outlet property="firstMeasurePickerView" destination="Gfj-d4-DiK" id="bI3-Q4-RgW"/>
                         <outlet property="lengthButton" destination="HqL-yS-BAe" id="snJ-cG-hDA"/>
