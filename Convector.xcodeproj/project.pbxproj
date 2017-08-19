@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		C13446B41F3D1C7B00576392 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13446B31F3D1C7B00576392 /* Units.swift */; };
 		C13446B71F3D25C700576392 /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13446B61F3D25C700576392 /* Length.swift */; };
-		C13446B91F3D323B00576392 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13446B81F3D323B00576392 /* Enumerations.swift */; };
 		C13446BB1F3E5CA700576392 /* Liquid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13446BA1F3E5CA700576392 /* Liquid.swift */; };
 		C13446BD1F3E69E800576392 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13446BC1F3E69E800576392 /* Weight.swift */; };
 		C13446BF1F3E6ED000576392 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13446BE1F3E6ED000576392 /* Temperature.swift */; };
 		C13446C21F3E725600576392 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13446C11F3E725600576392 /* Square.swift */; };
+		C16341581F47BFEF003AFC91 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16341571F47BFEF003AFC91 /* Volume.swift */; };
+		C163415A1F47C00D003AFC91 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16341591F47C00D003AFC91 /* Speed.swift */; };
 		C1B054501F37F39B00F0FB22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0544F1F37F39B00F0FB22 /* AppDelegate.swift */; };
 		C1B054551F37F39B00F0FB22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B054531F37F39B00F0FB22 /* Main.storyboard */; };
 		C1B054571F37F39B00F0FB22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1B054561F37F39B00F0FB22 /* Assets.xcassets */; };
@@ -25,11 +26,12 @@
 /* Begin PBXFileReference section */
 		C13446B31F3D1C7B00576392 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		C13446B61F3D25C700576392 /* Length.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Length.swift; sourceTree = "<group>"; };
-		C13446B81F3D323B00576392 /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		C13446BA1F3E5CA700576392 /* Liquid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Liquid.swift; sourceTree = "<group>"; };
 		C13446BC1F3E69E800576392 /* Weight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		C13446BE1F3E6ED000576392 /* Temperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		C13446C11F3E725600576392 /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		C16341571F47BFEF003AFC91 /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
+		C16341591F47C00D003AFC91 /* Speed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		C1B0544C1F37F39B00F0FB22 /* Convector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Convector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B0544F1F37F39B00F0FB22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B054541F37F39B00F0FB22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,23 +56,16 @@
 		C13446B51F3D259F00576392 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C13446B81F3D323B00576392 /* Enumerations.swift */,
-				C13446C01F3E6F3900576392 /* Units */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		C13446C01F3E6F3900576392 /* Units */ = {
-			isa = PBXGroup;
-			children = (
 				C13446B31F3D1C7B00576392 /* Units.swift */,
 				C13446B61F3D25C700576392 /* Length.swift */,
 				C13446C11F3E725600576392 /* Square.swift */,
+				C16341571F47BFEF003AFC91 /* Volume.swift */,
 				C13446BA1F3E5CA700576392 /* Liquid.swift */,
+				C16341591F47C00D003AFC91 /* Speed.swift */,
 				C13446BC1F3E69E800576392 /* Weight.swift */,
 				C13446BE1F3E6ED000576392 /* Temperature.swift */,
 			);
-			name = Units;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		C1B054431F37F39B00F0FB22 = {
@@ -187,12 +182,13 @@
 			files = (
 				C1B054651F37F40B00F0FB22 /* Brain.swift in Sources */,
 				C13446B71F3D25C700576392 /* Length.swift in Sources */,
-				C13446B91F3D323B00576392 /* Enumerations.swift in Sources */,
+				C163415A1F47C00D003AFC91 /* Speed.swift in Sources */,
 				C13446C21F3E725600576392 /* Square.swift in Sources */,
 				C1B054501F37F39B00F0FB22 /* AppDelegate.swift in Sources */,
 				C13446B41F3D1C7B00576392 /* Units.swift in Sources */,
 				C1B054671F37FA8C00F0FB22 /* ConvectorViewController.swift in Sources */,
 				C13446BB1F3E5CA700576392 /* Liquid.swift in Sources */,
+				C16341581F47BFEF003AFC91 /* Volume.swift in Sources */,
 				C13446BF1F3E6ED000576392 /* Temperature.swift in Sources */,
 				C13446BD1F3E69E800576392 /* Weight.swift in Sources */,
 			);

@@ -8,6 +8,13 @@
 
 import Foundation
 
+//MARK: Direction
+
+enum Direction {
+    case ImperialToMetric
+    case MetricToImperial
+}
+
 //MARK: Protocols
 
 protocol TypesProtocol {
@@ -19,6 +26,8 @@ protocol UnitsProtocol {
     var name: String {get}
     var translations: Dictionary<String,Double> {get}
 }
+
+//MARK: Units
 
 enum Units {
     
@@ -44,6 +53,16 @@ enum Units {
     static let squareMeter = "m²"
     static let squareKilometer = "km²"
     
+    //Units: Volume
+    
+    static let cubicInch = "inch³"
+    static let cubicFoot = "foot³"
+    static let cubicYard = "yard³"
+    static let cubicMile = "mile³"
+    
+    static let cubicMeter = "m³"
+    static let cubicKilometer = "km³"
+    
     //Units: Liquid
     
     static let fluidOunce = "fl oz"
@@ -54,6 +73,14 @@ enum Units {
     
     static let milliliter = "ml"
     static let liter = "l"
+    
+    //Units: Speed
+    
+    static let footPerSecond = "ft/s"
+    static let milePerHour = "mph"
+    
+    static let meterPerSecond = "m/s"
+    static let kilometerPerHour = "km/h"
     
     //Units: Weight
     

@@ -93,6 +93,6 @@ struct Kilometer: UnitsProtocol {
         Units.inch : 39370.1,
         Units.foot : 3280.84,
         Units.yard : 1093.61,
-        Units.mile : 1.24274
+        Units.mile : 0.621371
     ]
 }

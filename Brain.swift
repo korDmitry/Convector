@@ -17,23 +17,24 @@ struct Brain {
             case is Length:
                 self.unitImperial = Inch()
                 self.unitMetric = Millimeter()
-                break
             case is Square:
                 self.unitImperial = SquareInch()
                 self.unitMetric = SquareMeter()
-                break
+            case is Volume:
+                self.unitImperial = CubicInch()
+                self.unitMetric = CubicMeter()
             case is Liquid:
                 self.unitImperial = FluidOunce()
                 self.unitMetric = Milliliter()
-                break
+            case is Speed:
+                self.unitImperial = FootPerSecond()
+                self.unitMetric = MeterPerSecond()
             case is Weight:
                 self.unitImperial = Ounce()
                 self.unitMetric = Gram()
-                break
             case is Temperature:
                 self.unitImperial = Fahreight()
                 self.unitMetric = Celsius()
-                break
             default:
                 break
             }

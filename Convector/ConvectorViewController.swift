@@ -38,9 +38,12 @@ class ConvectorViewController: UIViewController {
     @IBOutlet weak var displayStackView: UIStackView!
     
     @IBOutlet weak var cleanButton: UIButton!
+    
     @IBOutlet weak var lengthButton: UIButton!
     @IBOutlet weak var squareButton: UIButton!
+    @IBOutlet weak var volumeButton: UIButton!
     @IBOutlet weak var liquidButton: UIButton!
+    @IBOutlet weak var speedButton: UIButton!
     @IBOutlet weak var weightButton: UIButton!
     @IBOutlet weak var temperatureButton: UIButton!
     
@@ -48,28 +51,42 @@ class ConvectorViewController: UIViewController {
     //MARK: @IBActions
     
     @IBAction func changeConvectionDirection(_ sender: UIButton) {
+        
+        let firstPVSelectedRow = firstMeasurePickerView.selectedRow(inComponent: 0)
+        let secondPVSeletedRow = secondMeasurePickerView.selectedRow(inComponent: 0)
+        
         brain.changeConvertionDirection()
         resultLabel.text = String(brain.calculateResult(Double(valueLabelText)!))
         updateUI()
+        
+        firstMeasurePickerView.selectRow(secondPVSeletedRow, inComponent: 0, animated: true)
+        secondMeasurePickerView.selectRow(firstPVSelectedRow, inComponent: 0, animated: true)
+        
     }
     
     @IBAction func changeMeasurementType(_ sender: UIButton) {
         
-        lengthButton.layer.borderWidth = 0
-        squareButton.layer.borderWidth = 0
-        liquidButton.layer.borderWidth = 0
-        weightButton.layer.borderWidth = 0
-        temperatureButton.layer.borderWidth = 0
+        lengthButton.layer.borderWidth = 0.25
+        squareButton.layer.borderWidth = 0.25
+        volumeButton.layer.borderWidth = 0.25
+        liquidButton.layer.borderWidth = 0.25
+        speedButton.layer.borderWidth = 0.25
+        weightButton.layer.borderWidth = 0.25
+        temperatureButton.layer.borderWidth = 0.25
         
-        sender.layer.borderWidth = 1
+        sender.layer.borderWidth = 1.5
         
         switch sender {
         case lengthButton:
             brain.measurementType = Length()
         case squareButton:
             brain.measurementType = Square()
+        case volumeButton:
+            brain.measurementType = Volume()
         case liquidButton:
             brain.measurementType = Liquid()
+        case speedButton:
+            brain.measurementType = Speed()
         case weightButton:
             brain.measurementType = Weight()
         case temperatureButton:
@@ -134,10 +151,9 @@ class ConvectorViewController: UIViewController {
     }
 }
 
+//MARK: PickerView DataSource & Delegate
 
 extension ConvectorViewController: UIPickerViewDataSource, UIPickerViewDelegate {
-    
-    //MARK: PickerView DataSource & Delegate
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
