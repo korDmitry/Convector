@@ -15,7 +15,7 @@ struct Volume: TypesProtocol {
 
 //MARK: Imperial
 
-struct CubicInch: UnitsProtocol {
+class CubicInch: UnitsProtocol {
     var name: String = Units.cubicInch
     var translations: Dictionary<String, Double> = [
         Units.cubicMeter : 0,
@@ -23,7 +23,7 @@ struct CubicInch: UnitsProtocol {
     ]
 }
 
-struct CubicFoot: UnitsProtocol {
+class CubicFoot: UnitsProtocol {
     var name: String = Units.cubicFoot
     var translations: Dictionary<String, Double> = [
         Units.cubicMeter : 0,
@@ -31,7 +31,7 @@ struct CubicFoot: UnitsProtocol {
     ]
 }
 
-struct CubicYard: UnitsProtocol {
+class CubicYard: UnitsProtocol {
     var name: String = Units.cubicYard
     var translations: Dictionary<String, Double> = [
         Units.cubicMeter : 0,
@@ -39,7 +39,7 @@ struct CubicYard: UnitsProtocol {
     ]
 }
 
-struct CubicMile: UnitsProtocol {
+class CubicMile: UnitsProtocol {
     var name: String = Units.cubicMile
     var translations: Dictionary<String, Double> = [
         Units.cubicMeter : 0,
@@ -49,7 +49,7 @@ struct CubicMile: UnitsProtocol {
 
 //MARK: Metric
 
-struct CubicMeter: UnitsProtocol {
+class CubicMeter: UnitsProtocol {
     var name: String = Units.cubicMeter
     var translations: Dictionary<String, Double> = [
         Units.cubicInch : 0,
@@ -59,7 +59,7 @@ struct CubicMeter: UnitsProtocol {
     ]
 }
 
-struct CubicKilometer: UnitsProtocol {
+class CubicKilometer: UnitsProtocol {
     var name: String = Units.cubicKilometer
     var translations: Dictionary<String, Double> = [
         Units.cubicInch : 0,

@@ -63,9 +63,15 @@ struct Brain {
     
     func calculateResult(_ value:Double) -> (Double) {
         if self.convertionDirection == .ImperialToMetric {
+            if self.measurementType is Temperature {
+                return unitImperial.translateWithFormula!(value)
+            }
             return value * unitImperial.translations[unitMetric.name]!
         }
         else {
+            if self.measurementType is Temperature {
+                return unitMetric.translateWithFormula!(value)
+            }
             return value * unitMetric.translations[unitImperial.name]!
         }
     }

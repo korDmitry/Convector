@@ -15,16 +15,22 @@ struct Temperature: TypesProtocol {
 
 //MARK: Imperial 
 
-struct Fahreight: UnitsProtocol {
+class Fahreight: UnitsProtocol {
     var name: String = Units.fahrenheit
     var translations: Dictionary<String, Double> = [
         Units.celsius : 0
     ]
+    func translateWithFormula(_ value: Double) -> Double {
+        return (value - 32) * 5 / 9
+    }
 }
 
-struct Celsius: UnitsProtocol {
+class Celsius: UnitsProtocol {
     var name: String = Units.celsius
     var translations: Dictionary<String, Double> = [
         Units.fahrenheit : 0
     ]
+    func translateWithFormula(_ value: Double) -> Double {
+        return value * 9 / 5 + 32
+    }
 }

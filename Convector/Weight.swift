@@ -15,7 +15,7 @@ struct Weight: TypesProtocol {
 
 //MARK: Imperial
 
-struct Ounce: UnitsProtocol {
+class Ounce: UnitsProtocol {
     var name: String = Units.ounce
     var translations: Dictionary<String, Double> = [
         Units.gram : 28.3495,
@@ -24,7 +24,7 @@ struct Ounce: UnitsProtocol {
     ]
 }
 
-struct Pound: UnitsProtocol {
+class Pound: UnitsProtocol {
     var name: String = Units.pound
     var translations: Dictionary<String, Double> = [
         Units.gram : 453.592,
@@ -35,7 +35,7 @@ struct Pound: UnitsProtocol {
 
 //MARK: Metric
 
-struct Gram: UnitsProtocol {
+class Gram: UnitsProtocol {
     var name: String = Units.gram
     var translations: Dictionary<String, Double> = [
         Units.ounce : 0.035274,
@@ -43,7 +43,7 @@ struct Gram: UnitsProtocol {
     ]
 }
 
-struct Kilogram: UnitsProtocol {
+class Kilogram: UnitsProtocol {
     var name: String = Units.kilogram
     var translations: Dictionary<String, Double> = [
         Units.ounce : 35.274,
@@ -51,7 +51,7 @@ struct Kilogram: UnitsProtocol {
     ]
 }
 
-struct Ton: UnitsProtocol {
+class Ton: UnitsProtocol {
     var name: String = Units.ton
     var translations: Dictionary<String, Double> = [
         Units.ounce : 35274,
