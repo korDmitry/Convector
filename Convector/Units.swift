@@ -85,8 +85,8 @@ enum Units {
     
     //Units: Weight
     
-    static let ounce = "ounce"
-    static let pound = "pound"
+    static let ounce = "oz"
+    static let pound = "lb"
     
     static let gram = "g"
     static let kilogram = "kg"

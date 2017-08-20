@@ -175,6 +175,8 @@ class ConvectorViewController: UIViewController {
     }
 }
 
+
+
 //MARK: PickerView DataSource & Delegate
 
 extension ConvectorViewController: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -203,29 +205,64 @@ extension ConvectorViewController: UIPickerViewDataSource, UIPickerViewDelegate 
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 40.0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var text = ""
         
         if brain.convertionDirection == .ImperialToMetric {
             if pickerView == firstMeasurePickerView {
-                return NSAttributedString.init(string: brain.measurementType.unitsImperial[row].name,
-                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
+                text = brain.measurementType.unitsImperial[row].name
             }
             else {
-                return NSAttributedString.init(string: brain.measurementType.unitsMetric[row].name,
-                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
+                text = brain.measurementType.unitsMetric[row].name
             }
         }
         else {
             if pickerView == firstMeasurePickerView {
-                return NSAttributedString.init(string: brain.measurementType.unitsMetric[row].name,
-                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
+                text = brain.measurementType.unitsMetric[row].name
             }
             else {
-                return NSAttributedString.init(string: brain.measurementType.unitsImperial[row].name,
-                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
+                text = brain.measurementType.unitsImperial[row].name
             }
         }
+        
+        let title = NSAttributedString(string: text, attributes: [
+            NSFontAttributeName : UIFont.systemFont(ofSize: 30.0, weight: UIFontWeightThin),
+            NSForegroundColorAttributeName : UIColor.white
+            ])
+        
+        let label = (view as? UILabel) ?? UILabel()
+        label.textColor = .black
+        label.textAlignment = .center
+        label.attributedText = title
+        return label
     }
+    
+//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+//        if brain.convertionDirection == .ImperialToMetric {
+//            if pickerView == firstMeasurePickerView {
+//                return NSAttributedString.init(string: brain.measurementType.unitsImperial[row].name,
+//                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
+//            }
+//            else {
+//                return NSAttributedString.init(string: brain.measurementType.unitsMetric[row].name,
+//                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
+//            }
+//        }
+//        else {
+//            if pickerView == firstMeasurePickerView {
+//                return NSAttributedString.init(string: brain.measurementType.unitsMetric[row].name,
+//                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
+//            }
+//            else {
+//                return NSAttributedString.init(string: brain.measurementType.unitsImperial[row].name,
+//                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
+//            }
+//        }
+//    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if brain.convertionDirection == .ImperialToMetric {
