@@ -25,6 +25,8 @@ class Fahreight: UnitsProtocol {
     }
 }
 
+//MARK: Metric
+
 class Celsius: UnitsProtocol {
     var name: String = Units.celsius
     var translations: Dictionary<String, Double> = [

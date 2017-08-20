@@ -10,6 +10,12 @@ import UIKit
 
 class ConvectorViewController: UIViewController {
     
+    override func viewDidLoad() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.changeConvectionDirection))
+        tapRecognizer.numberOfTapsRequired = 1
+        valueStackView.addGestureRecognizer(tapRecognizer)
+    }
+    
     override func viewWillLayoutSubviews() {
         switch self.view.frame.width {
         case 375.0:
@@ -26,6 +32,7 @@ class ConvectorViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        lengthButton.layer.borderWidth = 1.5
         valueLabel.layer.addBorder(edge: .bottom, color: UIColor.white, thickness: 0.5)
     }
     
@@ -36,9 +43,9 @@ class ConvectorViewController: UIViewController {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var displayStackView: UIStackView!
+    @IBOutlet weak var valueStackView: UIStackView!
     
     @IBOutlet weak var cleanButton: UIButton!
-    
     @IBOutlet weak var lengthButton: UIButton!
     @IBOutlet weak var squareButton: UIButton!
     @IBOutlet weak var volumeButton: UIButton!
@@ -50,22 +57,7 @@ class ConvectorViewController: UIViewController {
     
     //MARK: @IBActions
     
-    @IBAction func changeConvectionDirection(_ sender: UIButton) {
-        
-        let firstPVSelectedRow = firstMeasurePickerView.selectedRow(inComponent: 0)
-        let secondPVSeletedRow = secondMeasurePickerView.selectedRow(inComponent: 0)
-        
-        brain.changeConvertionDirection()
-        resultLabel.text = String(brain.calculateResult(Double(valueLabelText)!))
-        updateUI()
-        
-        firstMeasurePickerView.selectRow(secondPVSeletedRow, inComponent: 0, animated: true)
-        secondMeasurePickerView.selectRow(firstPVSelectedRow, inComponent: 0, animated: true)
-        
-    }
-    
     @IBAction func changeMeasurementType(_ sender: UIButton) {
-        
         lengthButton.layer.borderWidth = 0.25
         squareButton.layer.borderWidth = 0.25
         volumeButton.layer.borderWidth = 0.25
@@ -73,7 +65,6 @@ class ConvectorViewController: UIViewController {
         speedButton.layer.borderWidth = 0.25
         weightButton.layer.borderWidth = 0.25
         temperatureButton.layer.borderWidth = 0.25
-        
         sender.layer.borderWidth = 1.5
         
         switch sender {
@@ -94,18 +85,24 @@ class ConvectorViewController: UIViewController {
         default:
             break
         }
-        resultLabel.text = String(brain.calculateResult(Double(valueLabelText)!))
+        resultLabelText = String(brain.calculateResult(Double(valueLabelText)!))
         updateUI()
         
         firstMeasurePickerView.selectRow(0, inComponent: 0, animated: true)
         secondMeasurePickerView.selectRow(0, inComponent: 0, animated: true)
     }
     
+    @IBAction func changeSign(_ sender: UIButton) {
+        if valueLabelText != "0" {
+            let newValue = Double(valueLabelText)! * (-1)
+            valueLabelText = String(newValue)
+        }
+    }
+    
     @IBAction func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         if userInTheMiddleOfTyping {
-            let textCurrenlyInDisplay = valueLabel.text!
-            valueLabelText = textCurrenlyInDisplay + digit
+            valueLabelText = valueLabelText + digit
         }
         else {
             valueLabelText = digit
@@ -114,8 +111,7 @@ class ConvectorViewController: UIViewController {
     }
     
     @IBAction func cleanDigits(_ sender: UIButton) {
-        valueLabel.text = "0"
-        resultLabel.text = "0"
+        valueLabelText = "0"
         userInTheMiddleOfTyping = false
     }
     
@@ -139,11 +135,39 @@ class ConvectorViewController: UIViewController {
         }
         set {
             valueLabel.text = newValue
-            resultLabel.text = String(brain.calculateResult(Double(newValue)!))
+            if (newValue != "0.") {
+                resultLabelText = String(brain.calculateResult(Double(newValue)!))
+            }
         }
     }
     
-    //MARK: Private functions
+    var resultLabelText: String {
+        get {
+            return resultLabel.text!
+        }
+        set {
+            if newValue == "0.0" {
+                resultLabel.text = "0"
+            }
+            else {
+                resultLabel.text = newValue
+            }
+        }
+    }
+    
+    //MARK: functions
+    
+    func changeConvectionDirection() {
+        let firstPVSelectedRow = firstMeasurePickerView.selectedRow(inComponent: 0)
+        let secondPVSeletedRow = secondMeasurePickerView.selectedRow(inComponent: 0)
+        
+        brain.changeConvertionDirection()
+        resultLabelText = String(brain.calculateResult(Double(valueLabelText)!))
+        updateUI()
+        
+        firstMeasurePickerView.selectRow(secondPVSeletedRow, inComponent: 0, animated: true)
+        secondMeasurePickerView.selectRow(firstPVSelectedRow, inComponent: 0, animated: true)
+    }
     
     func updateUI() {
         firstMeasurePickerView.reloadAllComponents()
@@ -180,6 +204,7 @@ extension ConvectorViewController: UIPickerViewDataSource, UIPickerViewDelegate 
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
         if brain.convertionDirection == .ImperialToMetric {
             if pickerView == firstMeasurePickerView {
                 return NSAttributedString.init(string: brain.measurementType.unitsImperial[row].name,
@@ -219,7 +244,7 @@ extension ConvectorViewController: UIPickerViewDataSource, UIPickerViewDelegate 
                 brain.setUnitImperial(withIndex: row)
             }
         }
-        resultLabel.text = String(brain.calculateResult(Double(valueLabelText)!))
+        resultLabelText = String(brain.calculateResult(Double(valueLabelText)!))
         updateUI()
     }
 }

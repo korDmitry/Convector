@@ -99,7 +99,7 @@
                                                         <rect key="frame" x="80" y="0.0" width="80" height="80"/>
                                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
-                                                        <state key="normal" title="↔︎">
+                                                        <state key="normal" title="+/-">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -108,7 +108,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="changeConvectionDirection:" destination="PNs-Cy-Ry2" eventType="touchUpInside" id="bWZ-R1-YEp"/>
+                                                            <action selector="changeSign:" destination="PNs-Cy-Ry2" eventType="touchUpInside" id="6Cf-xb-pfU"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqL-yS-BAe">
@@ -397,7 +397,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="touchDigit:" destination="PNs-Cy-Ry2" eventType="touchUpInside" id="RVI-I7-40q"/>
+                                                            <action selector="touchDigit:" destination="PNs-Cy-Ry2" eventType="touchUpInside" id="A0L-fM-FVg"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyF-d5-jtI">
@@ -462,13 +462,14 @@
                         <outlet property="squareButton" destination="shf-ua-9yW" id="xcS-rq-0Te"/>
                         <outlet property="temperatureButton" destination="LyF-d5-jtI" id="9EB-xc-7GJ"/>
                         <outlet property="valueLabel" destination="I93-7K-WlV" id="P2D-gF-2Oa"/>
+                        <outlet property="valueStackView" destination="Xl6-yG-ab8" id="NDh-ZN-Dcb"/>
                         <outlet property="volumeButton" destination="1ay-Ew-MwD" id="EzH-jh-5PE"/>
                         <outlet property="weightButton" destination="G4g-tg-04y" id="gkH-3S-PzH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKS-4u-Z33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23" y="-150"/>
+            <point key="canvasLocation" x="101" y="-376"/>
         </scene>
     </scenes>
 </document>
