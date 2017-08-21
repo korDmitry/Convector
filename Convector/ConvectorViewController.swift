@@ -25,7 +25,7 @@ class ConvectorViewController: UIViewController {
         case 414.0:
             firstMeasurePickerView.widthAnchor.constraint(equalToConstant: 103.5).isActive = true
             secondMeasurePickerView.widthAnchor.constraint(equalToConstant: 103.5).isActive = true
-            displayStackView.heightAnchor.constraint(equalToConstant: 218.5).isActive = true
+            displayStackView.heightAnchor.constraint(equalToConstant: 198.5).isActive = true
         default:
             break
         }
