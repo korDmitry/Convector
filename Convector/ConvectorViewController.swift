@@ -36,6 +36,10 @@ class ConvectorViewController: UIViewController {
         valueLabel.layer.addBorder(edge: .bottom, color: UIColor.white, thickness: 0.5)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     //MARK: @IBOutlets
     
     @IBOutlet weak var firstMeasurePickerView: UIPickerView!
