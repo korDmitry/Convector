@@ -245,29 +245,6 @@ extension ConvectorViewController: UIPickerViewDataSource, UIPickerViewDelegate 
         return label
     }
     
-//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//        if brain.convertionDirection == .ImperialToMetric {
-//            if pickerView == firstMeasurePickerView {
-//                return NSAttributedString.init(string: brain.measurementType.unitsImperial[row].name,
-//                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
-//            }
-//            else {
-//                return NSAttributedString.init(string: brain.measurementType.unitsMetric[row].name,
-//                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
-//            }
-//        }
-//        else {
-//            if pickerView == firstMeasurePickerView {
-//                return NSAttributedString.init(string: brain.measurementType.unitsMetric[row].name,
-//                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
-//            }
-//            else {
-//                return NSAttributedString.init(string: brain.measurementType.unitsImperial[row].name,
-//                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
-//            }
-//        }
-//    }
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if brain.convertionDirection == .ImperialToMetric {
             if pickerView == firstMeasurePickerView {
