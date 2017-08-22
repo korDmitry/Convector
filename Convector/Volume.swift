@@ -9,8 +9,8 @@
 import Foundation
 
 struct Volume: TypesProtocol {
-    var unitsImperial: [UnitsProtocol] = [CubicInch(), CubicFoot(), CubicYard(), CubicMile()]
-    var unitsMetric: [UnitsProtocol] = [CubicMeter(), CubicKilometer()]
+    var unitsImperial: [UnitsProtocol] = [CubicInch(), CubicFoot()]
+    var unitsMetric: [UnitsProtocol] = [CubicMeter()]
 }
 
 //MARK: Imperial
@@ -18,32 +18,14 @@ struct Volume: TypesProtocol {
 class CubicInch: UnitsProtocol {
     var name: String = Units.cubicInch
     var translations: Dictionary<String, Double> = [
-        Units.cubicMeter : 0,
-        Units.cubicKilometer : 0
+        Units.cubicMeter : 1.6387e-5
     ]
 }
 
 class CubicFoot: UnitsProtocol {
     var name: String = Units.cubicFoot
     var translations: Dictionary<String, Double> = [
-        Units.cubicMeter : 0,
-        Units.cubicKilometer : 0
-    ]
-}
-
-class CubicYard: UnitsProtocol {
-    var name: String = Units.cubicYard
-    var translations: Dictionary<String, Double> = [
-        Units.cubicMeter : 0,
-        Units.cubicKilometer : 0
-    ]
-}
-
-class CubicMile: UnitsProtocol {
-    var name: String = Units.cubicMile
-    var translations: Dictionary<String, Double> = [
-        Units.cubicMeter : 0,
-        Units.cubicKilometer : 0
+        Units.cubicMeter : 0.0283168
     ]
 }
 
@@ -52,19 +34,7 @@ class CubicMile: UnitsProtocol {
 class CubicMeter: UnitsProtocol {
     var name: String = Units.cubicMeter
     var translations: Dictionary<String, Double> = [
-        Units.cubicInch : 0,
-        Units.cubicFoot : 0,
-        Units.cubicYard : 0,
-        Units.cubicMile : 0
-    ]
-}
-
-class CubicKilometer: UnitsProtocol {
-    var name: String = Units.cubicKilometer
-    var translations: Dictionary<String, Double> = [
-        Units.cubicInch : 0,
-        Units.cubicFoot : 0,
-        Units.cubicYard : 0,
-        Units.cubicMile : 0
+        Units.cubicInch : 61023.7,
+        Units.cubicFoot : 35.3147
     ]
 }
