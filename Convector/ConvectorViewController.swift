@@ -16,21 +16,6 @@ class ConvectorViewController: UIViewController {
         valueStackView.addGestureRecognizer(tapRecognizer)
     }
     
-    override func viewWillLayoutSubviews() {
-        switch self.view.frame.width {
-        case 375.0:
-            firstMeasurePickerView.widthAnchor.constraint(equalToConstant: 94.0).isActive = true
-            secondMeasurePickerView.widthAnchor.constraint(equalToConstant: 94.0).isActive = true
-            displayStackView.heightAnchor.constraint(equalToConstant: 178.25).isActive = true
-        case 414.0:
-            firstMeasurePickerView.widthAnchor.constraint(equalToConstant: 103.5).isActive = true
-            secondMeasurePickerView.widthAnchor.constraint(equalToConstant: 103.5).isActive = true
-            displayStackView.heightAnchor.constraint(equalToConstant: 198.5).isActive = true
-        default:
-            break
-        }
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         lengthButton.layer.borderWidth = 1.5
         valueLabel.layer.addBorder(edge: .bottom, color: UIColor.white, thickness: 0.5)

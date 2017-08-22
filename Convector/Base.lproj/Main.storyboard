@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,9 +31,6 @@
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfj-d4-DiK">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="148"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="P9n-xc-eNp"/>
-                                                </constraints>
                                                 <connections>
                                                     <outlet property="dataSource" destination="PNs-Cy-Ry2" id="OGX-0z-fu2"/>
                                                     <outlet property="delegate" destination="PNs-Cy-Ry2" id="s66-nJ-bVO"/>
@@ -54,24 +52,15 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="Iec-FP-70f"/>
-                                                </constraints>
                                             </stackView>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OuZ-OJ-Te0">
                                                 <rect key="frame" x="240" y="0.0" width="80" height="148"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="gi2-hf-42T"/>
-                                                </constraints>
                                                 <connections>
                                                     <outlet property="dataSource" destination="PNs-Cy-Ry2" id="ruK-7O-xIS"/>
                                                     <outlet property="delegate" destination="PNs-Cy-Ry2" id="RRo-km-dVm"/>
                                                 </connections>
                                             </pickerView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="148" id="B5A-7n-nYi"/>
-                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eKO-Yr-TBx">
                                         <rect key="frame" x="0.0" y="148" width="320" height="400"/>
@@ -145,7 +134,7 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="zKg-n8-NGk"/>
+                                                    <constraint firstAttribute="width" secondItem="gJj-0s-Wr8" secondAttribute="height" multiplier="4:1" id="KT6-aZ-mtU"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YsE-97-cnS">
@@ -217,7 +206,7 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="rpE-il-m3c"/>
+                                                    <constraint firstAttribute="width" secondItem="YsE-97-cnS" secondAttribute="height" multiplier="4:1" priority="999" id="EJS-xz-SNL"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h76-rM-llh">
@@ -289,7 +278,7 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="ZFQ-Ce-7a7"/>
+                                                    <constraint firstAttribute="width" secondItem="h76-rM-llh" secondAttribute="height" multiplier="4:1" id="bXR-o9-ofI"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kkw-xy-mx4">
@@ -362,7 +351,7 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Nh5-a5-YRd"/>
+                                                    <constraint firstAttribute="width" secondItem="Kkw-xy-mx4" secondAttribute="height" multiplier="4:1" priority="999" id="f71-Wc-RMI"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QFQ-qu-cQa">
@@ -434,12 +423,16 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="3Ys-Sg-Uj0"/>
+                                                    <constraint firstAttribute="width" secondItem="QFQ-qu-cQa" secondAttribute="height" multiplier="4:1" id="qNW-di-IR9"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Gfj-d4-DiK" firstAttribute="width" secondItem="Dal-lA-eXg" secondAttribute="width" id="Cmx-yv-cQR"/>
+                                    <constraint firstItem="OuZ-OJ-Te0" firstAttribute="width" secondItem="shf-ua-9yW" secondAttribute="width" id="S5Z-dX-Ybi"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
@@ -469,7 +462,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKS-4u-Z33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-75" y="-507"/>
+            <point key="canvasLocation" x="-383" y="-505"/>
         </scene>
     </scenes>
 </document>
