@@ -13,6 +13,14 @@
 		C13446BD1F3E69E800576392 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13446BC1F3E69E800576392 /* Weight.swift */; };
 		C13446BF1F3E6ED000576392 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13446BE1F3E6ED000576392 /* Temperature.swift */; };
 		C13446C21F3E725600576392 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13446C11F3E725600576392 /* Square.swift */; };
+		C14EB3CB1F4D0AA900AF6912 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14EB3C91F4D0AA900AF6912 /* Interface.storyboard */; };
+		C14EB3CD1F4D0AA900AF6912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C14EB3CC1F4D0AA900AF6912 /* Assets.xcassets */; };
+		C14EB3D41F4D0AA900AF6912 /* Convector_Apple_Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C14EB3D31F4D0AA900AF6912 /* Convector_Apple_Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C14EB3D91F4D0AA900AF6912 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14EB3D81F4D0AA900AF6912 /* InterfaceController.swift */; };
+		C14EB3DB1F4D0AA900AF6912 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14EB3DA1F4D0AA900AF6912 /* ExtensionDelegate.swift */; };
+		C14EB3DD1F4D0AA900AF6912 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14EB3DC1F4D0AA900AF6912 /* ComplicationController.swift */; };
+		C14EB3DF1F4D0AA900AF6912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C14EB3DE1F4D0AA900AF6912 /* Assets.xcassets */; };
+		C14EB3E31F4D0AA900AF6912 /* Convector_Apple_Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C14EB3C71F4D0AA900AF6912 /* Convector_Apple_Watch.app */; };
 		C16341581F47BFEF003AFC91 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16341571F47BFEF003AFC91 /* Volume.swift */; };
 		C163415A1F47C00D003AFC91 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16341591F47C00D003AFC91 /* Speed.swift */; };
 		C1B054501F37F39B00F0FB22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0544F1F37F39B00F0FB22 /* AppDelegate.swift */; };
@@ -23,6 +31,48 @@
 		C1B054671F37FA8C00F0FB22 /* ConvectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B054661F37FA8C00F0FB22 /* ConvectorViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C14EB3D51F4D0AA900AF6912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1B054441F37F39B00F0FB22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C14EB3D21F4D0AA900AF6912;
+			remoteInfo = "Convector_Apple_Watch Extension";
+		};
+		C14EB3E11F4D0AA900AF6912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1B054441F37F39B00F0FB22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C14EB3C61F4D0AA900AF6912;
+			remoteInfo = Convector_Apple_Watch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C14EB3E91F4D0AA900AF6912 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C14EB3D41F4D0AA900AF6912 /* Convector_Apple_Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C14EB3EB1F4D0AA900AF6912 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C14EB3E31F4D0AA900AF6912 /* Convector_Apple_Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		C13446B31F3D1C7B00576392 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		C13446B61F3D25C700576392 /* Length.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Length.swift; sourceTree = "<group>"; };
@@ -30,6 +80,16 @@
 		C13446BC1F3E69E800576392 /* Weight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		C13446BE1F3E6ED000576392 /* Temperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		C13446C11F3E725600576392 /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		C14EB3C71F4D0AA900AF6912 /* Convector_Apple_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Convector_Apple_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14EB3CA1F4D0AA900AF6912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C14EB3CC1F4D0AA900AF6912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C14EB3CE1F4D0AA900AF6912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C14EB3D31F4D0AA900AF6912 /* Convector_Apple_Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Convector_Apple_Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14EB3D81F4D0AA900AF6912 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C14EB3DA1F4D0AA900AF6912 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		C14EB3DC1F4D0AA900AF6912 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		C14EB3DE1F4D0AA900AF6912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C14EB3E01F4D0AA900AF6912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C16341571F47BFEF003AFC91 /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		C16341591F47C00D003AFC91 /* Speed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		C1B0544C1F37F39B00F0FB22 /* Convector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Convector.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +103,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C14EB3D01F4D0AA900AF6912 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1B054491F37F39B00F0FB22 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,10 +135,34 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		C14EB3C81F4D0AA900AF6912 /* Convector_Apple_Watch */ = {
+			isa = PBXGroup;
+			children = (
+				C14EB3C91F4D0AA900AF6912 /* Interface.storyboard */,
+				C14EB3CC1F4D0AA900AF6912 /* Assets.xcassets */,
+				C14EB3CE1F4D0AA900AF6912 /* Info.plist */,
+			);
+			path = Convector_Apple_Watch;
+			sourceTree = "<group>";
+		};
+		C14EB3D71F4D0AA900AF6912 /* Convector_Apple_Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C14EB3D81F4D0AA900AF6912 /* InterfaceController.swift */,
+				C14EB3DA1F4D0AA900AF6912 /* ExtensionDelegate.swift */,
+				C14EB3DC1F4D0AA900AF6912 /* ComplicationController.swift */,
+				C14EB3DE1F4D0AA900AF6912 /* Assets.xcassets */,
+				C14EB3E01F4D0AA900AF6912 /* Info.plist */,
+			);
+			path = "Convector_Apple_Watch Extension";
+			sourceTree = "<group>";
+		};
 		C1B054431F37F39B00F0FB22 = {
 			isa = PBXGroup;
 			children = (
 				C1B0544E1F37F39B00F0FB22 /* Convector */,
+				C14EB3C81F4D0AA900AF6912 /* Convector_Apple_Watch */,
+				C14EB3D71F4D0AA900AF6912 /* Convector_Apple_Watch Extension */,
 				C1B0544D1F37F39B00F0FB22 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				C1B0544C1F37F39B00F0FB22 /* Convector.app */,
+				C14EB3C71F4D0AA900AF6912 /* Convector_Apple_Watch.app */,
+				C14EB3D31F4D0AA900AF6912 /* Convector_Apple_Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +203,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C14EB3C61F4D0AA900AF6912 /* Convector_Apple_Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C14EB3EA1F4D0AA900AF6912 /* Build configuration list for PBXNativeTarget "Convector_Apple_Watch" */;
+			buildPhases = (
+				C14EB3C51F4D0AA900AF6912 /* Resources */,
+				C14EB3E91F4D0AA900AF6912 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C14EB3D61F4D0AA900AF6912 /* PBXTargetDependency */,
+			);
+			name = Convector_Apple_Watch;
+			productName = Convector_Apple_Watch;
+			productReference = C14EB3C71F4D0AA900AF6912 /* Convector_Apple_Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		C14EB3D21F4D0AA900AF6912 /* Convector_Apple_Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C14EB3E81F4D0AA900AF6912 /* Build configuration list for PBXNativeTarget "Convector_Apple_Watch Extension" */;
+			buildPhases = (
+				C14EB3CF1F4D0AA900AF6912 /* Sources */,
+				C14EB3D01F4D0AA900AF6912 /* Frameworks */,
+				C14EB3D11F4D0AA900AF6912 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Convector_Apple_Watch Extension";
+			productName = "Convector_Apple_Watch Extension";
+			productReference = C14EB3D31F4D0AA900AF6912 /* Convector_Apple_Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		C1B0544B1F37F39B00F0FB22 /* Convector */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1B0545E1F37F39B00F0FB22 /* Build configuration list for PBXNativeTarget "Convector" */;
@@ -117,10 +244,12 @@
 				C1B054481F37F39B00F0FB22 /* Sources */,
 				C1B054491F37F39B00F0FB22 /* Frameworks */,
 				C1B0544A1F37F39B00F0FB22 /* Resources */,
+				C14EB3EB1F4D0AA900AF6912 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C14EB3E21F4D0AA900AF6912 /* PBXTargetDependency */,
 			);
 			name = Convector;
 			productName = Convector;
@@ -137,6 +266,16 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Дмитрий Коробов";
 				TargetAttributes = {
+					C14EB3C61F4D0AA900AF6912 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = RJHPE689V9;
+						ProvisioningStyle = Automatic;
+					};
+					C14EB3D21F4D0AA900AF6912 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = RJHPE689V9;
+						ProvisioningStyle = Automatic;
+					};
 					C1B0544B1F37F39B00F0FB22 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = RJHPE689V9;
@@ -158,11 +297,30 @@
 			projectRoot = "";
 			targets = (
 				C1B0544B1F37F39B00F0FB22 /* Convector */,
+				C14EB3C61F4D0AA900AF6912 /* Convector_Apple_Watch */,
+				C14EB3D21F4D0AA900AF6912 /* Convector_Apple_Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C14EB3C51F4D0AA900AF6912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C14EB3CD1F4D0AA900AF6912 /* Assets.xcassets in Resources */,
+				C14EB3CB1F4D0AA900AF6912 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C14EB3D11F4D0AA900AF6912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C14EB3DF1F4D0AA900AF6912 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1B0544A1F37F39B00F0FB22 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -176,6 +334,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C14EB3CF1F4D0AA900AF6912 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C14EB3DB1F4D0AA900AF6912 /* ExtensionDelegate.swift in Sources */,
+				C14EB3D91F4D0AA900AF6912 /* InterfaceController.swift in Sources */,
+				C14EB3DD1F4D0AA900AF6912 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1B054481F37F39B00F0FB22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,7 +364,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C14EB3D61F4D0AA900AF6912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C14EB3D21F4D0AA900AF6912 /* Convector_Apple_Watch Extension */;
+			targetProxy = C14EB3D51F4D0AA900AF6912 /* PBXContainerItemProxy */;
+		};
+		C14EB3E21F4D0AA900AF6912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C14EB3C61F4D0AA900AF6912 /* Convector_Apple_Watch */;
+			targetProxy = C14EB3E11F4D0AA900AF6912 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		C14EB3C91F4D0AA900AF6912 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C14EB3CA1F4D0AA900AF6912 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		C1B054531F37F39B00F0FB22 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,6 +405,76 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C14EB3E41F4D0AA900AF6912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RJHPE689V9;
+				IBSC_MODULE = Convector_Apple_Watch_Extension;
+				INFOPLIST_FILE = Convector_Apple_Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.korcompany.Convector.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		C14EB3E51F4D0AA900AF6912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RJHPE689V9;
+				IBSC_MODULE = Convector_Apple_Watch_Extension;
+				INFOPLIST_FILE = Convector_Apple_Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.korcompany.Convector.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		C14EB3E61F4D0AA900AF6912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = RJHPE689V9;
+				INFOPLIST_FILE = "Convector_Apple_Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.korcompany.Convector.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		C14EB3E71F4D0AA900AF6912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = RJHPE689V9;
+				INFOPLIST_FILE = "Convector_Apple_Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.korcompany.Convector.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
 		C1B0545C1F37F39B00F0FB22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -338,6 +597,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C14EB3E81F4D0AA900AF6912 /* Build configuration list for PBXNativeTarget "Convector_Apple_Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C14EB3E61F4D0AA900AF6912 /* Debug */,
+				C14EB3E71F4D0AA900AF6912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C14EB3EA1F4D0AA900AF6912 /* Build configuration list for PBXNativeTarget "Convector_Apple_Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C14EB3E41F4D0AA900AF6912 /* Debug */,
+				C14EB3E51F4D0AA900AF6912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C1B054471F37F39B00F0FB22 /* Build configuration list for PBXProject "Convector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
