@@ -386,7 +386,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="touchDigit:" destination="PNs-Cy-Ry2" eventType="touchUpInside" id="A0L-fM-FVg"/>
+                                                            <action selector="touchDot:" destination="PNs-Cy-Ry2" eventType="touchUpInside" id="nfJ-Tw-hdc"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyF-d5-jtI">

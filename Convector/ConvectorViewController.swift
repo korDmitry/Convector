@@ -98,15 +98,26 @@ class ConvectorViewController: UIViewController {
             userInTheMiddleOfTyping = true
         }
     }
+
+    @IBAction func touchDot(_ sender: UIButton) {
+        if !userDialNumberWithDot {
+            let dot = sender.currentTitle!
+            valueLabelText = valueLabelText + dot
+            userDialNumberWithDot = true
+            userInTheMiddleOfTyping = true
+        }
+    }
     
     @IBAction func cleanDigits(_ sender: UIButton) {
         valueLabelText = "0"
         userInTheMiddleOfTyping = false
+        userDialNumberWithDot = false
     }
     
     //MARK: Variables
     
     var brain: Brain = Brain()
+    var userDialNumberWithDot: Bool = false
     var userInTheMiddleOfTyping: Bool = false {
         didSet {
             if self.userInTheMiddleOfTyping {
