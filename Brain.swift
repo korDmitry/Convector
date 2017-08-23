@@ -61,19 +61,38 @@ struct Brain {
         self.unitMetric = self.measurementType.unitsMetric[index]
     }
     
-    func calculateResult(_ value:Double) -> (Double) {
-        if self.convertionDirection == .ImperialToMetric {
-            if self.measurementType is Temperature {
-                return unitImperial.translateWithFormula!(value)
+    func calculateResult(_ value:String) -> String {
+        if let number = Double(value) {
+            var result: Double = 0
+            
+            if self.convertionDirection == .ImperialToMetric {
+                if self.measurementType is Temperature {
+                    result = unitImperial.translateWithFormula!(number)
+                }
+                else {
+                    result = number * unitImperial.translations[unitMetric.name]!
+                }
             }
-            return value * unitImperial.translations[unitMetric.name]!
-        }
-        else {
-            if self.measurementType is Temperature {
-                return unitMetric.translateWithFormula!(value)
+            else {
+                if self.measurementType is Temperature {
+                    result = unitMetric.translateWithFormula!(number)
+                }
+                else {
+                    result = number * unitMetric.translations[unitImperial.name]!
+                }
             }
-            return value * unitMetric.translations[unitImperial.name]!
+            
+            return formatNumber(result)
         }
+        return "0"
+    }
+    
+    func formatNumber(_ number: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.roundingMode = .halfUp
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 10
+        return formatter.string(from: NSNumber.init(value: number))!
     }
 }
 

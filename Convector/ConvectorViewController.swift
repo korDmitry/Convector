@@ -74,7 +74,7 @@ class ConvectorViewController: UIViewController {
         default:
             break
         }
-        resultLabelText = String(brain.calculateResult(Double(valueLabelText)!))
+        resultLabelText = brain.calculateResult(valueLabelText)
         updateUI()
         
         firstMeasurePickerView.selectRow(0, inComponent: 0, animated: true)
@@ -116,9 +116,9 @@ class ConvectorViewController: UIViewController {
     
     //MARK: Variables
     
-    var brain: Brain = Brain()
-    var userDialNumberWithDot: Bool = false
-    var userInTheMiddleOfTyping: Bool = false {
+    fileprivate var brain: Brain = Brain()
+    private var userDialNumberWithDot: Bool = false
+    private var userInTheMiddleOfTyping: Bool = false {
         didSet {
             if self.userInTheMiddleOfTyping {
                 cleanButton.setTitle("C", for: UIControlState.normal)
@@ -129,47 +129,40 @@ class ConvectorViewController: UIViewController {
         }
     }
     
-    var valueLabelText: String {
+    fileprivate var valueLabelText: String {
         get {
             return valueLabel.text!
         }
         set {
             valueLabel.text = newValue
-            if (newValue != "0.") {
-                resultLabelText = String(brain.calculateResult(Double(newValue)!))
-            }
+            resultLabelText = brain.calculateResult(valueLabelText)
         }
     }
     
-    var resultLabelText: String {
+    fileprivate var resultLabelText: String {
         get {
             return resultLabel.text!
         }
         set {
-            if newValue == "0.0" {
-                resultLabel.text = "0"
-            }
-            else {
-                resultLabel.text = newValue
-            }
+            resultLabel.text = newValue
         }
     }
     
     //MARK: functions
     
-    func changeConvectionDirection() {
+    @objc fileprivate func changeConvectionDirection() {
         let firstPVSelectedRow = firstMeasurePickerView.selectedRow(inComponent: 0)
         let secondPVSeletedRow = secondMeasurePickerView.selectedRow(inComponent: 0)
         
         brain.changeConvertionDirection()
-        resultLabelText = String(brain.calculateResult(Double(valueLabelText)!))
+        resultLabelText = brain.calculateResult(valueLabelText)
         updateUI()
         
         firstMeasurePickerView.selectRow(secondPVSeletedRow, inComponent: 0, animated: true)
         secondMeasurePickerView.selectRow(firstPVSelectedRow, inComponent: 0, animated: true)
     }
     
-    func updateUI() {
+    fileprivate func updateUI() {
         firstMeasurePickerView.reloadAllComponents()
         secondMeasurePickerView.reloadAllComponents()
     }
@@ -258,7 +251,7 @@ extension ConvectorViewController: UIPickerViewDataSource, UIPickerViewDelegate 
                 brain.setUnitImperial(withIndex: row)
             }
         }
-        resultLabelText = String(brain.calculateResult(Double(valueLabelText)!))
+        resultLabelText = brain.calculateResult(valueLabelText)
         updateUI()
     }
 }
