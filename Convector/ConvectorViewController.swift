@@ -74,7 +74,7 @@ class ConvectorViewController: UIViewController {
         default:
             break
         }
-        resultLabelText = brain.calculateResult(valueLabelText)
+        resultLabelText = brain.calculateResult(value)
         updateUI()
         
         firstMeasurePickerView.selectRow(0, inComponent: 0, animated: true)
@@ -102,7 +102,7 @@ class ConvectorViewController: UIViewController {
     @IBAction func touchDot(_ sender: UIButton) {
         if !userDialNumberWithDot {
             let dot = sender.currentTitle!
-            valueLabelText = valueLabelText + dot
+            valueLabel.text = valueLabel.text! + dot
             userDialNumberWithDot = true
             userInTheMiddleOfTyping = true
         }
@@ -129,13 +129,17 @@ class ConvectorViewController: UIViewController {
         }
     }
     
+    fileprivate var value: Double = 0
+    
     fileprivate var valueLabelText: String {
         get {
-            return valueLabel.text!
+            return valueLabel.text!.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: ",", with: ".")
         }
         set {
-            valueLabel.text = newValue
-            resultLabelText = brain.calculateResult(valueLabelText)
+            let text = newValue
+            value = Double(text)!
+            valueLabel.text = brain.formatter.string(from: NSNumber(value: value))
+            resultLabelText = brain.calculateResult(value)
         }
     }
     
@@ -155,7 +159,7 @@ class ConvectorViewController: UIViewController {
         let secondPVSeletedRow = secondMeasurePickerView.selectedRow(inComponent: 0)
         
         brain.changeConvertionDirection()
-        resultLabelText = brain.calculateResult(valueLabelText)
+        resultLabelText = brain.calculateResult(value)
         updateUI()
         
         firstMeasurePickerView.selectRow(secondPVSeletedRow, inComponent: 0, animated: true)
@@ -251,7 +255,7 @@ extension ConvectorViewController: UIPickerViewDataSource, UIPickerViewDelegate 
                 brain.setUnitImperial(withIndex: row)
             }
         }
-        resultLabelText = brain.calculateResult(valueLabelText)
+        resultLabelText = brain.calculateResult(value)
         updateUI()
     }
 }

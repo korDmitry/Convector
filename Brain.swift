@@ -74,30 +74,27 @@ struct Brain {
         self.unitMetric = self.measurementType.unitsMetric[index]
     }
     
-    func calculateResult(_ value:String) -> String {
-        if let number = Double(value) {
-            var result: Double = 0
-            
-            if self.convertionDirection == .ImperialToMetric {
-                if self.measurementType is Temperature {
-                    result = unitImperial.translateWithFormula!(number)
-                }
-                else {
-                    result = number * unitImperial.translations[unitMetric.name]!
-                }
+    func calculateResult(_ number:Double) -> String {
+        var result: Double = 0
+        
+        if self.convertionDirection == .ImperialToMetric {
+            if self.measurementType is Temperature {
+                result = unitImperial.translateWithFormula!(number)
             }
             else {
-                if self.measurementType is Temperature {
-                    result = unitMetric.translateWithFormula!(number)
-                }
-                else {
-                    result = number * unitMetric.translations[unitImperial.name]!
-                }
+                result = number * unitImperial.translations[unitMetric.name]!
             }
-            
-            return formatter.string(from: NSNumber(value: result))!
         }
-        return "0"
+        else {
+            if self.measurementType is Temperature {
+                result = unitMetric.translateWithFormula!(number)
+            }
+            else {
+                result = number * unitMetric.translations[unitImperial.name]!
+            }
+        }
+        
+        return formatter.string(from: NSNumber(value: result))!
     }
 }
 
