@@ -89,22 +89,26 @@ class ConvectorViewController: UIViewController {
     }
     
     @IBAction func touchDigit(_ sender: UIButton) {
-        let digit = sender.currentTitle!
-        if userInTheMiddleOfTyping {
-            valueLabelText = valueLabelText + digit
-        }
-        else {
-            valueLabelText = digit
-            userInTheMiddleOfTyping = true
+        if !valueTextNeedToTruncate() {
+            let digit = sender.currentTitle!
+            if userInTheMiddleOfTyping {
+                valueLabelText = valueLabelText + digit
+            }
+            else {
+                valueLabelText = digit
+                userInTheMiddleOfTyping = true
+            }
         }
     }
 
     @IBAction func touchDot(_ sender: UIButton) {
-        if !userDialNumberWithDot {
-            let dot = sender.currentTitle!
-            valueLabel.text = valueLabel.text! + dot
-            userDialNumberWithDot = true
-            userInTheMiddleOfTyping = true
+        if !valueTextNeedToTruncate() {
+            if !userDialNumberWithDot {
+                let dot = sender.currentTitle!
+                valueLabel.text = valueLabel.text! + dot
+                userDialNumberWithDot = true
+                userInTheMiddleOfTyping = true
+            }
         }
     }
     
@@ -152,6 +156,7 @@ class ConvectorViewController: UIViewController {
         }
     }
     
+    
     //MARK: functions
     
     @objc fileprivate func changeConvectionDirection() {
@@ -169,6 +174,11 @@ class ConvectorViewController: UIViewController {
     fileprivate func updateUI() {
         firstMeasurePickerView.reloadAllComponents()
         secondMeasurePickerView.reloadAllComponents()
+    }
+    
+    private func valueTextNeedToTruncate() -> Bool {
+        let text = valueLabelText.replacingOccurrences(of: "-", with: "").replacingOccurrences(of: ".", with: "")
+        return text.characters.count < 9 ? false : true
     }
 }
 
