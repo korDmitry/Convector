@@ -44,6 +44,19 @@ struct Brain {
     private var unitImperial: UnitsProtocol = Inch()
     private var unitMetric: UnitsProtocol = Millimeter()
     
+    var formatter: NumberFormatter {
+        get {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.roundingMode = .halfUp
+            formatter.decimalSeparator = ","
+            formatter.groupingSeparator = " "
+            formatter.minimumFractionDigits = 0
+            formatter.maximumFractionDigits = 10
+            return formatter
+        }
+    }
+    
     mutating func changeConvertionDirection() {
         if convertionDirection == .ImperialToMetric {
             self.convertionDirection = .MetricToImperial
@@ -82,18 +95,9 @@ struct Brain {
                 }
             }
             
-            return formatNumber(result)
+            return formatter.string(from: NSNumber(value: result))!
         }
         return "0"
     }
-    
-    func formatNumber(_ number: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.roundingMode = .halfUp
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 10
-        return formatter.string(from: NSNumber.init(value: number))!
-    }
 }
-
 
