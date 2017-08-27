@@ -92,7 +92,12 @@ class ConvectorViewController: UIViewController {
         if !valueTextNeedToTruncate() {
             let digit = sender.currentTitle!
             if userInTheMiddleOfTyping {
-                valueLabelText = valueLabelText + digit
+                if digit == "0" && userDialNumberWithDot {
+                    valueLabel.text = valueLabel.text! + digit
+                }
+                else {
+                    valueLabelText = valueLabelText + digit
+                }
             }
             else {
                 valueLabelText = digit
