@@ -52,7 +52,7 @@ struct Brain {
             formatter.decimalSeparator = ","
             formatter.groupingSeparator = " "
             formatter.minimumFractionDigits = 0
-            formatter.maximumFractionDigits = 10
+            formatter.maximumFractionDigits = self.measurementType is Temperature ? 2 : 10
             return formatter
         }
     }
@@ -94,7 +94,16 @@ struct Brain {
             }
         }
         
-        return formatter.string(from: NSNumber(value: result))!
+        let resultString = formatter.string(from: NSNumber(value: result))!
+        
+        if resultString.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "-", with: "").characters.count > 11 {
+            let newFormatter = self.formatter
+            newFormatter.numberStyle = .scientific
+            newFormatter.maximumFractionDigits = 4
+            return newFormatter.string(from: NSNumber(value: result))!
+        }
+        
+        return resultString
     }
 }
 
