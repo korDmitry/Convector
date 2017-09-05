@@ -10,6 +10,8 @@ import UIKit
 
 class ConvectorViewController: UIViewController {
     
+    //MARK: VC Lifecycle
+    
     override func viewDidLoad() {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.changeConvectionDirection))
         tapRecognizer.numberOfTapsRequired = 1
@@ -19,10 +21,6 @@ class ConvectorViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         lengthButton.layer.borderWidth = 1.5
         valueLabel.layer.addBorder(edge: .bottom, color: UIColor.white, thickness: 0.5)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     //MARK: @IBOutlets
@@ -159,6 +157,10 @@ class ConvectorViewController: UIViewController {
         set {
             resultLabel.text = newValue
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     
