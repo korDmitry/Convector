@@ -13,12 +13,14 @@ class ConvectorViewController: UIViewController {
     //MARK: VC Lifecycle
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.changeConvectionDirection))
         tapRecognizer.numberOfTapsRequired = 1
         valueStackView.addGestureRecognizer(tapRecognizer)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         lengthButton.layer.borderWidth = 1.5
         valueLabel.layer.addBorder(edge: .bottom, color: UIColor.white, thickness: 0.5)
     }
