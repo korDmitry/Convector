@@ -44,6 +44,19 @@ struct Brain {
     private var unitImperial: UnitsProtocol = Inch()
     private var unitMetric: UnitsProtocol = Millimeter()
     
+    var formatter: NumberFormatter {
+        get {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.roundingMode = .halfUp
+            formatter.decimalSeparator = ","
+            formatter.groupingSeparator = " "
+            formatter.minimumFractionDigits = 0
+            formatter.maximumFractionDigits = self.measurementType is Temperature ? 2 : 10
+            return formatter
+        }
+    }
+    
     mutating func changeConvertionDirection() {
         if convertionDirection == .ImperialToMetric {
             self.convertionDirection = .MetricToImperial
@@ -61,20 +74,36 @@ struct Brain {
         self.unitMetric = self.measurementType.unitsMetric[index]
     }
     
-    func calculateResult(_ value:Double) -> (Double) {
+    func calculateResult(_ number:Double) -> String {
+        var result: Double = 0
+        
         if self.convertionDirection == .ImperialToMetric {
             if self.measurementType is Temperature {
-                return unitImperial.translateWithFormula!(value)
+                result = unitImperial.translateWithFormula!(number)
             }
-            return value * unitImperial.translations[unitMetric.name]!
+            else {
+                result = number * unitImperial.translations[unitMetric.name]!
+            }
         }
         else {
             if self.measurementType is Temperature {
-                return unitMetric.translateWithFormula!(value)
+                result = unitMetric.translateWithFormula!(number)
             }
-            return value * unitMetric.translations[unitImperial.name]!
+            else {
+                result = number * unitMetric.translations[unitImperial.name]!
+            }
         }
+        
+        let resultString = formatter.string(from: NSNumber(value: result))!
+        
+        if resultString.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "-", with: "").characters.count > 11 {
+            let newFormatter = self.formatter
+            newFormatter.numberStyle = .scientific
+            newFormatter.maximumFractionDigits = 4
+            return newFormatter.string(from: NSNumber(value: result))!
+        }
+        
+        return resultString
     }
 }
-
 

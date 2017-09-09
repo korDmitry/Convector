@@ -10,19 +10,19 @@ import UIKit
 
 class ConvectorViewController: UIViewController {
     
+    //MARK: VC Lifecycle
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.changeConvectionDirection))
         tapRecognizer.numberOfTapsRequired = 1
         valueStackView.addGestureRecognizer(tapRecognizer)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         lengthButton.layer.borderWidth = 1.5
         valueLabel.layer.addBorder(edge: .bottom, color: UIColor.white, thickness: 0.5)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     //MARK: @IBOutlets
@@ -74,7 +74,7 @@ class ConvectorViewController: UIViewController {
         default:
             break
         }
-        resultLabelText = String(brain.calculateResult(Double(valueLabelText)!))
+        resultLabelText = brain.calculateResult(value)
         updateUI()
         
         firstMeasurePickerView.selectRow(0, inComponent: 0, animated: true)
@@ -89,25 +89,45 @@ class ConvectorViewController: UIViewController {
     }
     
     @IBAction func touchDigit(_ sender: UIButton) {
-        let digit = sender.currentTitle!
-        if userInTheMiddleOfTyping {
-            valueLabelText = valueLabelText + digit
+        if !valueTextNeedToTruncate() {
+            let digit = sender.currentTitle!
+            if userInTheMiddleOfTyping {
+                if digit == "0" && userDialNumberWithDot {
+                    valueLabel.text = valueLabel.text! + digit
+                }
+                else {
+                    valueLabelText = valueLabelText + digit
+                }
+            }
+            else {
+                valueLabelText = digit
+                userInTheMiddleOfTyping = true
+            }
         }
-        else {
-            valueLabelText = digit
-            userInTheMiddleOfTyping = true
+    }
+
+    @IBAction func touchDot(_ sender: UIButton) {
+        if !valueTextNeedToTruncate() {
+            if !userDialNumberWithDot {
+                let dot = sender.currentTitle!
+                valueLabel.text = valueLabel.text! + dot
+                userDialNumberWithDot = true
+                userInTheMiddleOfTyping = true
+            }
         }
     }
     
     @IBAction func cleanDigits(_ sender: UIButton) {
         valueLabelText = "0"
         userInTheMiddleOfTyping = false
+        userDialNumberWithDot = false
     }
     
     //MARK: Variables
     
-    var brain: Brain = Brain()
-    var userInTheMiddleOfTyping: Bool = false {
+    fileprivate var brain: Brain = Brain()
+    private var userDialNumberWithDot: Bool = false
+    private var userInTheMiddleOfTyping: Bool = false {
         didSet {
             if self.userInTheMiddleOfTyping {
                 cleanButton.setTitle("C", for: UIControlState.normal)
@@ -118,49 +138,56 @@ class ConvectorViewController: UIViewController {
         }
     }
     
-    var valueLabelText: String {
+    fileprivate var value: Double = 0
+    
+    fileprivate var valueLabelText: String {
         get {
-            return valueLabel.text!
+            return valueLabel.text!.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: ",", with: ".")
         }
         set {
-            valueLabel.text = newValue
-            if (newValue != "0.") {
-                resultLabelText = String(brain.calculateResult(Double(newValue)!))
-            }
+            let text = newValue
+            value = Double(text)!
+            valueLabel.text = brain.formatter.string(from: NSNumber(value: value))
+            resultLabelText = brain.calculateResult(value)
         }
     }
     
-    var resultLabelText: String {
+    fileprivate var resultLabelText: String {
         get {
             return resultLabel.text!
         }
         set {
-            if newValue == "0.0" {
-                resultLabel.text = "0"
-            }
-            else {
-                resultLabel.text = newValue
-            }
+            resultLabel.text = newValue
         }
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    
     //MARK: functions
     
-    func changeConvectionDirection() {
+    @objc fileprivate func changeConvectionDirection() {
         let firstPVSelectedRow = firstMeasurePickerView.selectedRow(inComponent: 0)
         let secondPVSeletedRow = secondMeasurePickerView.selectedRow(inComponent: 0)
         
         brain.changeConvertionDirection()
-        resultLabelText = String(brain.calculateResult(Double(valueLabelText)!))
+        resultLabelText = brain.calculateResult(value)
         updateUI()
         
         firstMeasurePickerView.selectRow(secondPVSeletedRow, inComponent: 0, animated: true)
         secondMeasurePickerView.selectRow(firstPVSelectedRow, inComponent: 0, animated: true)
     }
     
-    func updateUI() {
+    fileprivate func updateUI() {
         firstMeasurePickerView.reloadAllComponents()
         secondMeasurePickerView.reloadAllComponents()
+    }
+    
+    private func valueTextNeedToTruncate() -> Bool {
+        let text = valueLabelText.replacingOccurrences(of: "-", with: "").replacingOccurrences(of: ".", with: "")
+        return text.characters.count < 9 ? false : true
     }
 }
 
@@ -247,7 +274,7 @@ extension ConvectorViewController: UIPickerViewDataSource, UIPickerViewDelegate 
                 brain.setUnitImperial(withIndex: row)
             }
         }
-        resultLabelText = String(brain.calculateResult(Double(valueLabelText)!))
+        resultLabelText = brain.calculateResult(value)
         updateUI()
     }
 }
