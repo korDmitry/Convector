@@ -1,4 +1,5 @@
 # Convector
-Simplе convector from imperial system to metric with default Apple's calculator style
+Simplе convector from imperial system to metric
 
-![convector](https://user-images.githubusercontent.com/8937802/29855749-3c68ca76-8d1c-11e7-86a2-374423995876.PNG)
+![simulator screen shot 9 2017 16 52 07](https://user-images.githubusercontent.com/8937802/30243855-330e1ea6-9580-11e7-8233-1d6b74e5943b.png)
+
