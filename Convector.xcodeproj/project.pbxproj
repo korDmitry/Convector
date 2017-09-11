@@ -21,9 +21,13 @@
 		C1B0545A1F37F39B00F0FB22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B054581F37F39B00F0FB22 /* LaunchScreen.storyboard */; };
 		C1B054651F37F40B00F0FB22 /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B054641F37F40B00F0FB22 /* Brain.swift */; };
 		C1B054671F37FA8C00F0FB22 /* ConvectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B054661F37FA8C00F0FB22 /* ConvectorViewController.swift */; };
+		D654684A01FBFFD899DC2CCC /* Pods_Convector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86132EDD695B08A5B58EC2AD /* Pods_Convector.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0669F7A6F8BB867785882A99 /* Pods-Convector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convector.release.xcconfig"; path = "Pods/Target Support Files/Pods-Convector/Pods-Convector.release.xcconfig"; sourceTree = "<group>"; };
+		83B95DCA219220F7C55FCE30 /* Pods-Convector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Convector/Pods-Convector.debug.xcconfig"; sourceTree = "<group>"; };
+		86132EDD695B08A5B58EC2AD /* Pods_Convector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Convector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13446B31F3D1C7B00576392 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		C13446B61F3D25C700576392 /* Length.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Length.swift; sourceTree = "<group>"; };
 		C13446BA1F3E5CA700576392 /* Liquid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Liquid.swift; sourceTree = "<group>"; };
@@ -47,12 +51,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D654684A01FBFFD899DC2CCC /* Pods_Convector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FE817C1DB6667E00CFD7F79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83B95DCA219220F7C55FCE30 /* Pods-Convector.debug.xcconfig */,
+				0669F7A6F8BB867785882A99 /* Pods-Convector.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7BE52B9FF4D185AB7008E806 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86132EDD695B08A5B58EC2AD /* Pods_Convector.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C13446B51F3D259F00576392 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +95,8 @@
 			children = (
 				C1B0544E1F37F39B00F0FB22 /* Convector */,
 				C1B0544D1F37F39B00F0FB22 /* Products */,
+				3FE817C1DB6667E00CFD7F79 /* Pods */,
+				7BE52B9FF4D185AB7008E806 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1B0545E1F37F39B00F0FB22 /* Build configuration list for PBXNativeTarget "Convector" */;
 			buildPhases = (
+				8F70501398A90B67E03D49D1 /* [CP] Check Pods Manifest.lock */,
 				C1B054481F37F39B00F0FB22 /* Sources */,
 				C1B054491F37F39B00F0FB22 /* Frameworks */,
 				C1B0544A1F37F39B00F0FB22 /* Resources */,
+				BC9396395774597CE1A45BC9 /* [CP] Embed Pods Frameworks */,
+				FB9909DF4C9A07E171005771 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,6 +201,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F70501398A90B67E03D49D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Convector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC9396395774597CE1A45BC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Convector/Pods-Convector-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB9909DF4C9A07E171005771 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Convector/Pods-Convector-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C1B054481F37F39B00F0FB22 /* Sources */ = {
@@ -311,6 +389,7 @@
 		};
 		C1B0545F1F37F39B00F0FB22 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83B95DCA219220F7C55FCE30 /* Pods-Convector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -325,6 +404,7 @@
 		};
 		C1B054601F37F39B00F0FB22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0669F7A6F8BB867785882A99 /* Pods-Convector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
