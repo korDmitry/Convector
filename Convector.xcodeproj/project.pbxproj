@@ -144,6 +144,7 @@
 				C1B0544A1F37F39B00F0FB22 /* Resources */,
 				BC9396395774597CE1A45BC9 /* [CP] Embed Pods Frameworks */,
 				FB9909DF4C9A07E171005771 /* [CP] Copy Pods Resources */,
+				C10953CE1F661BAE00A2EBD7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -235,6 +236,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Convector/Pods-Convector-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C10953CE1F661BAE00A2EBD7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 059b6b83a2180198e73fc0ad1f1eacc5f8bfbd65 e79fdb36940f352a0a747547f641642a3611f6b6ba4994b906714411ccbc6849";
 		};
 		FB9909DF4C9A07E171005771 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
