@@ -246,8 +246,8 @@ extension ConvectorViewController: UIPickerViewDataSource, UIPickerViewDelegate 
         }
         
         let title = NSAttributedString(string: text, attributes: [
-            NSFontAttributeName : UIFont.systemFont(ofSize: 30.0, weight: UIFontWeightThin),
-            NSForegroundColorAttributeName : UIColor.white
+            NSAttributedStringKey.font : UIFont.systemFont(ofSize: 30.0, weight: UIFont.Weight.thin),
+            NSAttributedStringKey.foregroundColor : UIColor.white
             ])
         
         let label = (view as? UILabel) ?? UILabel()
