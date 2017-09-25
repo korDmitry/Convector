@@ -14,9 +14,7 @@ class ConvectorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.changeConvectionDirection))
-        tapRecognizer.numberOfTapsRequired = 1
-        valueStackView.addGestureRecognizer(tapRecognizer)
+        setTapRecognizer()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -167,6 +165,12 @@ class ConvectorViewController: UIViewController {
     
     
     //MARK: functions
+    
+    private func setTapRecognizer() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.changeConvectionDirection))
+        tapRecognizer.numberOfTapsRequired = 1
+        valueStackView.addGestureRecognizer(tapRecognizer)
+    }
     
     @objc fileprivate func changeConvectionDirection() {
         let firstPVSelectedRow = firstMeasurePickerView.selectedRow(inComponent: 0)
