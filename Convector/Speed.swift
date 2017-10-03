@@ -15,7 +15,7 @@ struct Speed: TypeProtocol {
 
 //MARK: - Imperial units
 
-class FootPerSecond: UnitProtocol {
+struct FootPerSecond: UnitProtocol {
     var name: String = Units.footPerSecond
     var translations: Dictionary<String, Double> = [
         Units.meterPerSecond : 0.3048,
@@ -23,7 +23,7 @@ class FootPerSecond: UnitProtocol {
     ]
 }
 
-class MilePerHour: UnitProtocol {
+struct MilePerHour: UnitProtocol {
     var name: String = Units.milePerHour
     var translations: Dictionary<String, Double> = [
         Units.meterPerSecond : 0.44704,
@@ -33,7 +33,7 @@ class MilePerHour: UnitProtocol {
 
 //MARK: - Metric units
 
-class MeterPerSecond: UnitProtocol {
+struct MeterPerSecond: UnitProtocol {
     var name: String = Units.meterPerSecond
     var translations: Dictionary<String, Double> = [
         Units.footPerSecond : 3.280840,
@@ -41,7 +41,7 @@ class MeterPerSecond: UnitProtocol {
     ]
 }
 
-class KilometerPerHour: UnitProtocol {
+struct KilometerPerHour: UnitProtocol {
     var name: String = Units.kilometerPerHour
     var translations: Dictionary<String, Double> = [
         Units.footPerSecond : 0.911344,

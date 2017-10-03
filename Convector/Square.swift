@@ -15,7 +15,7 @@ struct Square: TypeProtocol {
 
 //MARK: - Imperial units
 
-class SquareInch: UnitProtocol {
+struct SquareInch: UnitProtocol {
     var name: String = Units.squareInch
     var translations: Dictionary<String, Double> = [
         Units.squareMeter : 0.00064516,
@@ -23,7 +23,7 @@ class SquareInch: UnitProtocol {
     ]
 }
 
-class SquareFoot: UnitProtocol {
+struct SquareFoot: UnitProtocol {
     var name: String = Units.squareFoot
     var translations: Dictionary<String, Double> = [
         Units.squareMeter : 0.092903,
@@ -31,7 +31,7 @@ class SquareFoot: UnitProtocol {
     ]
 }
 
-class SquareYard: UnitProtocol {
+struct SquareYard: UnitProtocol {
     var name: String = Units.squareYard
     var translations: Dictionary<String, Double> = [
         Units.squareMeter : 0.836127,
@@ -39,7 +39,7 @@ class SquareYard: UnitProtocol {
     ]
 }
 
-class SquareMile: UnitProtocol {
+struct SquareMile: UnitProtocol {
     var name: String = Units.squareMile
     var translations: Dictionary<String, Double> = [
         Units.squareMeter : 2.59e+6,
@@ -49,7 +49,7 @@ class SquareMile: UnitProtocol {
 
 //MARK: - Metric units
 
-class SquareMeter: UnitProtocol {
+struct SquareMeter: UnitProtocol {
     var name: String = Units.squareMeter
     var translations: Dictionary<String, Double> = [
         Units.squareInch : 1550,
@@ -59,7 +59,7 @@ class SquareMeter: UnitProtocol {
     ]
 }
 
-class SquareKilometer: UnitProtocol {
+struct SquareKilometer: UnitProtocol {
     var name: String = Units.squareKilometer
     var translations: Dictionary<String, Double> = [
         Units.squareInch : 1.55e+9,

@@ -15,7 +15,7 @@ struct Temperature: TypeProtocol {
 
 //MARK: - Imperial units
 
-class Fahreight: UnitProtocol, UnitTranslatedProtocol {
+struct Fahreight: UnitProtocol, UnitTranslatedProtocol {
     var name: String = Units.fahrenheit
     var translations: Dictionary<String, Double> = [
         Units.celsius : 0
@@ -28,7 +28,7 @@ class Fahreight: UnitProtocol, UnitTranslatedProtocol {
 
 //MARK: - Metric units
 
-class Celsius: UnitProtocol, UnitTranslatedProtocol  {
+struct Celsius: UnitProtocol, UnitTranslatedProtocol  {
     var name: String = Units.celsius
     var translations: Dictionary<String, Double> = [
         Units.fahrenheit : 0

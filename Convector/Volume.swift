@@ -15,14 +15,14 @@ struct Volume: TypeProtocol {
 
 //MARK: - Imperial units
 
-class CubicInch: UnitProtocol {
+struct CubicInch: UnitProtocol {
     var name: String = Units.cubicInch
     var translations: Dictionary<String, Double> = [
         Units.cubicMeter : 1.6387e-5
     ]
 }
 
-class CubicFoot: UnitProtocol {
+struct CubicFoot: UnitProtocol {
     var name: String = Units.cubicFoot
     var translations: Dictionary<String, Double> = [
         Units.cubicMeter : 0.0283168
@@ -31,7 +31,7 @@ class CubicFoot: UnitProtocol {
 
 //MARK: - Metric units
 
-class CubicMeter: UnitProtocol {
+struct CubicMeter: UnitProtocol {
     var name: String = Units.cubicMeter
     var translations: Dictionary<String, Double> = [
         Units.cubicInch : 61023.7,

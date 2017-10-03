@@ -15,7 +15,7 @@ struct Length: TypeProtocol {
 
 //MARK: - Imperial units
 
-class Inch: UnitProtocol {
+struct Inch: UnitProtocol {
     var name: String = Units.inch
     var translations: Dictionary<String,Double> = [
         Units.millimeter : 25.4,
@@ -25,7 +25,7 @@ class Inch: UnitProtocol {
     ]
 }
 
-class Foot: UnitProtocol {
+struct Foot: UnitProtocol {
     var name: String = Units.foot
     var translations: Dictionary<String,Double> = [
         Units.millimeter : 304.8,
@@ -35,7 +35,7 @@ class Foot: UnitProtocol {
     ]
 }
 
-class Yard: UnitProtocol {
+struct Yard: UnitProtocol {
     var name: String = Units.yard
     var translations: Dictionary<String,Double> = [
         Units.millimeter : 914.4,
@@ -45,7 +45,7 @@ class Yard: UnitProtocol {
     ]
 }
 
-class Mile: UnitProtocol {
+struct Mile: UnitProtocol {
     var name: String = Units.mile
     var translations: Dictionary<String,Double> = [
         Units.millimeter : 1609340,
@@ -57,7 +57,7 @@ class Mile: UnitProtocol {
 
 //MARK: - Metric units
 
-class Millimeter: UnitProtocol {
+struct Millimeter: UnitProtocol {
     var name: String = Units.millimeter
     var translations: Dictionary<String,Double> = [
         Units.inch : 0.0393701,
@@ -67,7 +67,7 @@ class Millimeter: UnitProtocol {
     ]
 }
 
-class Centimeter: UnitProtocol {
+struct Centimeter: UnitProtocol {
     var name: String = Units.centimeter
     var translations: Dictionary<String,Double> = [
         Units.inch : 0.393701,
@@ -77,7 +77,7 @@ class Centimeter: UnitProtocol {
     ]
 }
 
-class Meter: UnitProtocol {
+struct Meter: UnitProtocol {
     var name: String = Units.meter
     var translations: Dictionary<String,Double> = [
         Units.inch : 39.3701,
@@ -87,7 +87,7 @@ class Meter: UnitProtocol {
     ]
 }
 
-class Kilometer: UnitProtocol {
+struct Kilometer: UnitProtocol {
     var name: String = Units.kilometer
     var translations: Dictionary<String,Double> = [
         Units.inch : 39370.1,

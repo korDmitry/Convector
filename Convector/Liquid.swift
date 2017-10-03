@@ -15,7 +15,7 @@ struct Liquid: TypeProtocol {
 
 //MARK: - Imperial units
 
-class FluidOunce: UnitProtocol {
+struct FluidOunce: UnitProtocol {
     var name: String = Units.fluidOunce
     var translations: Dictionary<String, Double> = [
         Units.milliliter : 29.5735,
@@ -23,7 +23,7 @@ class FluidOunce: UnitProtocol {
     ]
 }
 
-class Cup: UnitProtocol {
+struct Cup: UnitProtocol {
     var name: String = Units.cup
     var translations: Dictionary<String,Double> = [
         Units.milliliter : 236.588,
@@ -31,7 +31,7 @@ class Cup: UnitProtocol {
     ]
 }
 
-class Pint: UnitProtocol {
+struct Pint: UnitProtocol {
     var name: String = Units.pint
     var translations: Dictionary<String, Double> = [
         Units.milliliter : 473.176,
@@ -39,7 +39,7 @@ class Pint: UnitProtocol {
     ]
 }
 
-class Quart: UnitProtocol {
+struct Quart: UnitProtocol {
     var name: String = Units.quart
     var translations: Dictionary<String, Double> = [
         Units.milliliter : 946.353,
@@ -47,7 +47,7 @@ class Quart: UnitProtocol {
     ]
 }
 
-class Galon: UnitProtocol {
+struct Galon: UnitProtocol {
     var name: String = Units.galon
     var translations: Dictionary<String, Double> = [
         Units.milliliter : 3785.41,
@@ -57,7 +57,7 @@ class Galon: UnitProtocol {
 
 //MARK: - Metric units
 
-class Milliliter: UnitProtocol {
+struct Milliliter: UnitProtocol {
     var name: String = Units.milliliter
     var translations: Dictionary<String, Double> = [
         Units.fluidOunce : 0.033814,
@@ -68,7 +68,7 @@ class Milliliter: UnitProtocol {
     ]
 }
 
-class Liter: UnitProtocol {
+struct Liter: UnitProtocol {
     var name: String = Units.liter
     var translations: Dictionary<String, Double> = [
         Units.fluidOunce : 33.814,
