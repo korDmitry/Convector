@@ -79,7 +79,7 @@ struct Brain {
         
         if self.convertionDirection == .ImperialToMetric {
             if self.measurementType is Temperature {
-                result = unitImperial.translateWithFormula!(number)
+                result = ((unitImperial as? UnitTranslatedProtocol)?.translateWithFormula(number))!
             }
             else {
                 result = number * unitImperial.translations[unitMetric.name]!
@@ -87,7 +87,7 @@ struct Brain {
         }
         else {
             if self.measurementType is Temperature {
-                result = unitMetric.translateWithFormula!(number)
+                result = ((unitMetric as? UnitTranslatedProtocol)?.translateWithFormula(number))!
             }
             else {
                 result = number * unitMetric.translations[unitImperial.name]!

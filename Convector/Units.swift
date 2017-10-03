@@ -20,10 +20,13 @@ protocol TypeProtocol {
     var unitsMetric: [UnitProtocol] {get}
 }
 
-@objc protocol UnitProtocol {
+protocol UnitProtocol {
     var name: String {get}
     var translations: Dictionary<String,Double> {get}
-    @objc optional  func translateWithFormula(_ value: Double) -> Double 
+}
+
+protocol UnitTranslatedProtocol {
+    func translateWithFormula(_ value: Double) -> Double
 }
 
 //MARK: - Units name
