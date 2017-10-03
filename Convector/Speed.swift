@@ -13,7 +13,7 @@ struct Speed: TypesProtocol {
     var unitsMetric: [UnitsProtocol] = [MeterPerSecond(), KilometerPerHour()]
 }
 
-//MARK: Imperial
+//MARK: - Imperial units
 
 class FootPerSecond: UnitsProtocol {
     var name: String = Units.footPerSecond
@@ -31,7 +31,7 @@ class MilePerHour: UnitsProtocol {
     ]
 }
 
-//MARK: Metric
+//MARK: - Metric units
 
 class MeterPerSecond: UnitsProtocol {
     var name: String = Units.meterPerSecond

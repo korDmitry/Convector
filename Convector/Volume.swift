@@ -13,7 +13,7 @@ struct Volume: TypesProtocol {
     var unitsMetric: [UnitsProtocol] = [CubicMeter()]
 }
 
-//MARK: Imperial
+//MARK: - Imperial units
 
 class CubicInch: UnitsProtocol {
     var name: String = Units.cubicInch
@@ -29,7 +29,7 @@ class CubicFoot: UnitsProtocol {
     ]
 }
 
-//MARK: Metric
+//MARK: - Metric units
 
 class CubicMeter: UnitsProtocol {
     var name: String = Units.cubicMeter

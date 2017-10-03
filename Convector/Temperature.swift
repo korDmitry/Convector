@@ -13,7 +13,7 @@ struct Temperature: TypesProtocol {
     var unitsMetric: [UnitsProtocol] = [Celsius()]
 }
 
-//MARK: Imperial 
+//MARK: - Imperial units
 
 class Fahreight: UnitsProtocol {
     var name: String = Units.fahrenheit
@@ -25,7 +25,7 @@ class Fahreight: UnitsProtocol {
     }
 }
 
-//MARK: Metric
+//MARK: - Metric units
 
 class Celsius: UnitsProtocol {
     var name: String = Units.celsius

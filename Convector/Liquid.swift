@@ -13,7 +13,7 @@ struct Liquid: TypesProtocol {
     var unitsMetric: [UnitsProtocol] = [Milliliter(), Liter()]
 }
 
-//MARK: Imperial
+//MARK: - Imperial units
 
 class FluidOunce: UnitsProtocol {
     var name: String = Units.fluidOunce
@@ -55,7 +55,7 @@ class Galon: UnitsProtocol {
     ]
 }
 
-//MARK: Metric
+//MARK: - Metric units
 
 class Milliliter: UnitsProtocol {
     var name: String = Units.milliliter

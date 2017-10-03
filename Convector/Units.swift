@@ -8,14 +8,12 @@
 
 import Foundation
 
-//MARK: Direction
-
 enum Direction {
     case ImperialToMetric
     case MetricToImperial
 }
 
-//MARK: Protocols
+//MARK: - Protocols
 
 protocol TypesProtocol {
     var unitsImperial: [UnitsProtocol] {get}
@@ -28,11 +26,11 @@ protocol TypesProtocol {
     @objc optional  func translateWithFormula(_ value: Double) -> Double 
 }
 
-//MARK: Units
+//MARK: - Units name
 
 enum Units {
     
-    //Units: Length
+    //MARK: Length
     
     static let inch = "inch"
     static let foot = "foot"
@@ -44,7 +42,7 @@ enum Units {
     static let meter = "m"
     static let kilometer = "km"
     
-    //Units: Square
+    //MARK: Square
     
     static let squareInch = "inch²"
     static let squareFoot = "foot²"
@@ -54,7 +52,7 @@ enum Units {
     static let squareMeter = "m²"
     static let squareKilometer = "km²"
     
-    //Units: Volume
+    //MARK: Volume
     
     static let cubicInch = "inch³"
     static let cubicFoot = "foot³"
@@ -64,7 +62,7 @@ enum Units {
     static let cubicMeter = "m³"
     static let cubicKilometer = "km³"
     
-    //Units: Liquid
+    //MARK: Liquid
     
     static let fluidOunce = "fl oz"
     static let cup = "cup"
@@ -75,7 +73,7 @@ enum Units {
     static let milliliter = "ml"
     static let liter = "l"
     
-    //Units: Speed
+    //MARK: Speed
     
     static let footPerSecond = "ft/s"
     static let milePerHour = "mph"
@@ -83,7 +81,7 @@ enum Units {
     static let meterPerSecond = "m/s"
     static let kilometerPerHour = "km/h"
     
-    //Units: Weight
+    //MARK: Weight
     
     static let ounce = "oz"
     static let pound = "lb"
@@ -92,7 +90,7 @@ enum Units {
     static let kilogram = "kg"
     static let ton = "ton"
     
-    //Units: Temperature
+    //MARK: Temperature
     
     static let fahrenheit = "℉"
     

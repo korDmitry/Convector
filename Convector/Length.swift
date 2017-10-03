@@ -13,7 +13,7 @@ struct Length: TypesProtocol {
     var unitsMetric: [UnitsProtocol] = [Millimeter(), Centimeter(), Meter(), Kilometer()]
 }
 
-//MARK: Imperial
+//MARK: - Imperial units
 
 class Inch: UnitsProtocol {
     var name: String = Units.inch
@@ -55,7 +55,7 @@ class Mile: UnitsProtocol {
     ]
 }
 
-//MARK: Metric
+//MARK: - Metric units
 
 class Millimeter: UnitsProtocol {
     var name: String = Units.millimeter

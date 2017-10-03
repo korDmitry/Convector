@@ -13,7 +13,7 @@ struct Weight: TypesProtocol {
     var unitsMetric: [UnitsProtocol] = [Gram(), Kilogram(), Ton()]
 }
 
-//MARK: Imperial
+//MARK: - Imperial units
 
 class Ounce: UnitsProtocol {
     var name: String = Units.ounce
@@ -33,7 +33,7 @@ class Pound: UnitsProtocol {
     ]
 }
 
-//MARK: Metric
+//MARK: - Metric units
 
 class Gram: UnitsProtocol {
     var name: String = Units.gram

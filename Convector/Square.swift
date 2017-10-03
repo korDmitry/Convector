@@ -13,7 +13,7 @@ struct Square: TypesProtocol {
     var unitsMetric: [UnitsProtocol] = [SquareMeter(), SquareKilometer()]
 }
 
-//MARK: Imperial
+//MARK: - Imperial units
 
 class SquareInch: UnitsProtocol {
     var name: String = Units.squareInch
@@ -47,7 +47,7 @@ class SquareMile: UnitsProtocol {
     ]
 }
 
-//MARK: Metric 
+//MARK: - Metric units
 
 class SquareMeter: UnitsProtocol {
     var name: String = Units.squareMeter
