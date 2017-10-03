@@ -15,12 +15,12 @@ enum Direction {
 
 //MARK: - Protocols
 
-protocol TypesProtocol {
-    var unitsImperial: [UnitsProtocol] {get}
-    var unitsMetric: [UnitsProtocol] {get}
+protocol TypeProtocol {
+    var unitsImperial: [UnitProtocol] {get}
+    var unitsMetric: [UnitProtocol] {get}
 }
 
-@objc protocol UnitsProtocol {
+@objc protocol UnitProtocol {
     var name: String {get}
     var translations: Dictionary<String,Double> {get}
     @objc optional  func translateWithFormula(_ value: Double) -> Double 

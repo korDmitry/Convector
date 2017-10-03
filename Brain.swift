@@ -11,7 +11,7 @@ import Foundation
 struct Brain {
     
     var convertionDirection: Direction = .ImperialToMetric
-    var measurementType: TypesProtocol = Length() {
+    var measurementType: TypeProtocol = Length() {
         didSet {
             switch self.measurementType {
             case is Length:
@@ -41,8 +41,8 @@ struct Brain {
         }
     }
     
-    private var unitImperial: UnitsProtocol = Inch()
-    private var unitMetric: UnitsProtocol = Millimeter()
+    private var unitImperial: UnitProtocol = Inch()
+    private var unitMetric: UnitProtocol = Millimeter()
     
     var formatter: NumberFormatter {
         get {

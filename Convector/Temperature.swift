@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Temperature: TypesProtocol {
-    var unitsImperial: [UnitsProtocol] = [Fahreight()]
-    var unitsMetric: [UnitsProtocol] = [Celsius()]
+struct Temperature: TypeProtocol {
+    var unitsImperial: [UnitProtocol] = [Fahreight()]
+    var unitsMetric: [UnitProtocol] = [Celsius()]
 }
 
 //MARK: - Imperial units
 
-class Fahreight: UnitsProtocol {
+class Fahreight: UnitProtocol {
     var name: String = Units.fahrenheit
     var translations: Dictionary<String, Double> = [
         Units.celsius : 0
@@ -27,7 +27,7 @@ class Fahreight: UnitsProtocol {
 
 //MARK: - Metric units
 
-class Celsius: UnitsProtocol {
+class Celsius: UnitProtocol {
     var name: String = Units.celsius
     var translations: Dictionary<String, Double> = [
         Units.fahrenheit : 0

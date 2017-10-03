@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Speed: TypesProtocol {
-    var unitsImperial: [UnitsProtocol] = [FootPerSecond(), MilePerHour()]
-    var unitsMetric: [UnitsProtocol] = [MeterPerSecond(), KilometerPerHour()]
+struct Speed: TypeProtocol {
+    var unitsImperial: [UnitProtocol] = [FootPerSecond(), MilePerHour()]
+    var unitsMetric: [UnitProtocol] = [MeterPerSecond(), KilometerPerHour()]
 }
 
 //MARK: - Imperial units
 
-class FootPerSecond: UnitsProtocol {
+class FootPerSecond: UnitProtocol {
     var name: String = Units.footPerSecond
     var translations: Dictionary<String, Double> = [
         Units.meterPerSecond : 0.3048,
@@ -23,7 +23,7 @@ class FootPerSecond: UnitsProtocol {
     ]
 }
 
-class MilePerHour: UnitsProtocol {
+class MilePerHour: UnitProtocol {
     var name: String = Units.milePerHour
     var translations: Dictionary<String, Double> = [
         Units.meterPerSecond : 0.44704,
@@ -33,7 +33,7 @@ class MilePerHour: UnitsProtocol {
 
 //MARK: - Metric units
 
-class MeterPerSecond: UnitsProtocol {
+class MeterPerSecond: UnitProtocol {
     var name: String = Units.meterPerSecond
     var translations: Dictionary<String, Double> = [
         Units.footPerSecond : 3.280840,
@@ -41,7 +41,7 @@ class MeterPerSecond: UnitsProtocol {
     ]
 }
 
-class KilometerPerHour: UnitsProtocol {
+class KilometerPerHour: UnitProtocol {
     var name: String = Units.kilometerPerHour
     var translations: Dictionary<String, Double> = [
         Units.footPerSecond : 0.911344,

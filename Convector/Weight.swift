@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Weight: TypesProtocol {
-    var unitsImperial: [UnitsProtocol] = [Ounce(), Pound()]
-    var unitsMetric: [UnitsProtocol] = [Gram(), Kilogram(), Ton()]
+struct Weight: TypeProtocol {
+    var unitsImperial: [UnitProtocol] = [Ounce(), Pound()]
+    var unitsMetric: [UnitProtocol] = [Gram(), Kilogram(), Ton()]
 }
 
 //MARK: - Imperial units
 
-class Ounce: UnitsProtocol {
+class Ounce: UnitProtocol {
     var name: String = Units.ounce
     var translations: Dictionary<String, Double> = [
         Units.gram : 28.3495,
@@ -24,7 +24,7 @@ class Ounce: UnitsProtocol {
     ]
 }
 
-class Pound: UnitsProtocol {
+class Pound: UnitProtocol {
     var name: String = Units.pound
     var translations: Dictionary<String, Double> = [
         Units.gram : 453.592,
@@ -35,7 +35,7 @@ class Pound: UnitsProtocol {
 
 //MARK: - Metric units
 
-class Gram: UnitsProtocol {
+class Gram: UnitProtocol {
     var name: String = Units.gram
     var translations: Dictionary<String, Double> = [
         Units.ounce : 0.035274,
@@ -43,7 +43,7 @@ class Gram: UnitsProtocol {
     ]
 }
 
-class Kilogram: UnitsProtocol {
+class Kilogram: UnitProtocol {
     var name: String = Units.kilogram
     var translations: Dictionary<String, Double> = [
         Units.ounce : 35.274,
@@ -51,7 +51,7 @@ class Kilogram: UnitsProtocol {
     ]
 }
 
-class Ton: UnitsProtocol {
+class Ton: UnitProtocol {
     var name: String = Units.ton
     var translations: Dictionary<String, Double> = [
         Units.ounce : 35274,

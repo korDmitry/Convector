@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Length: TypesProtocol {
-    var unitsImperial: [UnitsProtocol] = [Inch(), Foot(), Yard(), Mile()]
-    var unitsMetric: [UnitsProtocol] = [Millimeter(), Centimeter(), Meter(), Kilometer()]
+struct Length: TypeProtocol {
+    var unitsImperial: [UnitProtocol] = [Inch(), Foot(), Yard(), Mile()]
+    var unitsMetric: [UnitProtocol] = [Millimeter(), Centimeter(), Meter(), Kilometer()]
 }
 
 //MARK: - Imperial units
 
-class Inch: UnitsProtocol {
+class Inch: UnitProtocol {
     var name: String = Units.inch
     var translations: Dictionary<String,Double> = [
         Units.millimeter : 25.4,
@@ -25,7 +25,7 @@ class Inch: UnitsProtocol {
     ]
 }
 
-class Foot: UnitsProtocol {
+class Foot: UnitProtocol {
     var name: String = Units.foot
     var translations: Dictionary<String,Double> = [
         Units.millimeter : 304.8,
@@ -35,7 +35,7 @@ class Foot: UnitsProtocol {
     ]
 }
 
-class Yard: UnitsProtocol {
+class Yard: UnitProtocol {
     var name: String = Units.yard
     var translations: Dictionary<String,Double> = [
         Units.millimeter : 914.4,
@@ -45,7 +45,7 @@ class Yard: UnitsProtocol {
     ]
 }
 
-class Mile: UnitsProtocol {
+class Mile: UnitProtocol {
     var name: String = Units.mile
     var translations: Dictionary<String,Double> = [
         Units.millimeter : 1609340,
@@ -57,7 +57,7 @@ class Mile: UnitsProtocol {
 
 //MARK: - Metric units
 
-class Millimeter: UnitsProtocol {
+class Millimeter: UnitProtocol {
     var name: String = Units.millimeter
     var translations: Dictionary<String,Double> = [
         Units.inch : 0.0393701,
@@ -67,7 +67,7 @@ class Millimeter: UnitsProtocol {
     ]
 }
 
-class Centimeter: UnitsProtocol {
+class Centimeter: UnitProtocol {
     var name: String = Units.centimeter
     var translations: Dictionary<String,Double> = [
         Units.inch : 0.393701,
@@ -77,7 +77,7 @@ class Centimeter: UnitsProtocol {
     ]
 }
 
-class Meter: UnitsProtocol {
+class Meter: UnitProtocol {
     var name: String = Units.meter
     var translations: Dictionary<String,Double> = [
         Units.inch : 39.3701,
@@ -87,7 +87,7 @@ class Meter: UnitsProtocol {
     ]
 }
 
-class Kilometer: UnitsProtocol {
+class Kilometer: UnitProtocol {
     var name: String = Units.kilometer
     var translations: Dictionary<String,Double> = [
         Units.inch : 39370.1,

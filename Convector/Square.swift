@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Square: TypesProtocol {
-    var unitsImperial: [UnitsProtocol] = [SquareInch(), SquareFoot(), SquareYard(), SquareMile()]
-    var unitsMetric: [UnitsProtocol] = [SquareMeter(), SquareKilometer()]
+struct Square: TypeProtocol {
+    var unitsImperial: [UnitProtocol] = [SquareInch(), SquareFoot(), SquareYard(), SquareMile()]
+    var unitsMetric: [UnitProtocol] = [SquareMeter(), SquareKilometer()]
 }
 
 //MARK: - Imperial units
 
-class SquareInch: UnitsProtocol {
+class SquareInch: UnitProtocol {
     var name: String = Units.squareInch
     var translations: Dictionary<String, Double> = [
         Units.squareMeter : 0.00064516,
@@ -23,7 +23,7 @@ class SquareInch: UnitsProtocol {
     ]
 }
 
-class SquareFoot: UnitsProtocol {
+class SquareFoot: UnitProtocol {
     var name: String = Units.squareFoot
     var translations: Dictionary<String, Double> = [
         Units.squareMeter : 0.092903,
@@ -31,7 +31,7 @@ class SquareFoot: UnitsProtocol {
     ]
 }
 
-class SquareYard: UnitsProtocol {
+class SquareYard: UnitProtocol {
     var name: String = Units.squareYard
     var translations: Dictionary<String, Double> = [
         Units.squareMeter : 0.836127,
@@ -39,7 +39,7 @@ class SquareYard: UnitsProtocol {
     ]
 }
 
-class SquareMile: UnitsProtocol {
+class SquareMile: UnitProtocol {
     var name: String = Units.squareMile
     var translations: Dictionary<String, Double> = [
         Units.squareMeter : 2.59e+6,
@@ -49,7 +49,7 @@ class SquareMile: UnitsProtocol {
 
 //MARK: - Metric units
 
-class SquareMeter: UnitsProtocol {
+class SquareMeter: UnitProtocol {
     var name: String = Units.squareMeter
     var translations: Dictionary<String, Double> = [
         Units.squareInch : 1550,
@@ -59,7 +59,7 @@ class SquareMeter: UnitsProtocol {
     ]
 }
 
-class SquareKilometer: UnitsProtocol {
+class SquareKilometer: UnitProtocol {
     var name: String = Units.squareKilometer
     var translations: Dictionary<String, Double> = [
         Units.squareInch : 1.55e+9,

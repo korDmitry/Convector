@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Liquid: TypesProtocol {
-    var unitsImperial: [UnitsProtocol] = [FluidOunce(), Cup(), Pint(), Quart(), Galon()]
-    var unitsMetric: [UnitsProtocol] = [Milliliter(), Liter()]
+struct Liquid: TypeProtocol {
+    var unitsImperial: [UnitProtocol] = [FluidOunce(), Cup(), Pint(), Quart(), Galon()]
+    var unitsMetric: [UnitProtocol] = [Milliliter(), Liter()]
 }
 
 //MARK: - Imperial units
 
-class FluidOunce: UnitsProtocol {
+class FluidOunce: UnitProtocol {
     var name: String = Units.fluidOunce
     var translations: Dictionary<String, Double> = [
         Units.milliliter : 29.5735,
@@ -23,7 +23,7 @@ class FluidOunce: UnitsProtocol {
     ]
 }
 
-class Cup: UnitsProtocol {
+class Cup: UnitProtocol {
     var name: String = Units.cup
     var translations: Dictionary<String,Double> = [
         Units.milliliter : 236.588,
@@ -31,7 +31,7 @@ class Cup: UnitsProtocol {
     ]
 }
 
-class Pint: UnitsProtocol {
+class Pint: UnitProtocol {
     var name: String = Units.pint
     var translations: Dictionary<String, Double> = [
         Units.milliliter : 473.176,
@@ -39,7 +39,7 @@ class Pint: UnitsProtocol {
     ]
 }
 
-class Quart: UnitsProtocol {
+class Quart: UnitProtocol {
     var name: String = Units.quart
     var translations: Dictionary<String, Double> = [
         Units.milliliter : 946.353,
@@ -47,7 +47,7 @@ class Quart: UnitsProtocol {
     ]
 }
 
-class Galon: UnitsProtocol {
+class Galon: UnitProtocol {
     var name: String = Units.galon
     var translations: Dictionary<String, Double> = [
         Units.milliliter : 3785.41,
@@ -57,7 +57,7 @@ class Galon: UnitsProtocol {
 
 //MARK: - Metric units
 
-class Milliliter: UnitsProtocol {
+class Milliliter: UnitProtocol {
     var name: String = Units.milliliter
     var translations: Dictionary<String, Double> = [
         Units.fluidOunce : 0.033814,
@@ -68,7 +68,7 @@ class Milliliter: UnitsProtocol {
     ]
 }
 
-class Liter: UnitsProtocol {
+class Liter: UnitProtocol {
     var name: String = Units.liter
     var translations: Dictionary<String, Double> = [
         Units.fluidOunce : 33.814,

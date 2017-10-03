@@ -8,21 +8,21 @@
 
 import Foundation
 
-struct Volume: TypesProtocol {
-    var unitsImperial: [UnitsProtocol] = [CubicInch(), CubicFoot()]
-    var unitsMetric: [UnitsProtocol] = [CubicMeter()]
+struct Volume: TypeProtocol {
+    var unitsImperial: [UnitProtocol] = [CubicInch(), CubicFoot()]
+    var unitsMetric: [UnitProtocol] = [CubicMeter()]
 }
 
 //MARK: - Imperial units
 
-class CubicInch: UnitsProtocol {
+class CubicInch: UnitProtocol {
     var name: String = Units.cubicInch
     var translations: Dictionary<String, Double> = [
         Units.cubicMeter : 1.6387e-5
     ]
 }
 
-class CubicFoot: UnitsProtocol {
+class CubicFoot: UnitProtocol {
     var name: String = Units.cubicFoot
     var translations: Dictionary<String, Double> = [
         Units.cubicMeter : 0.0283168
@@ -31,7 +31,7 @@ class CubicFoot: UnitsProtocol {
 
 //MARK: - Metric units
 
-class CubicMeter: UnitsProtocol {
+class CubicMeter: UnitProtocol {
     var name: String = Units.cubicMeter
     var translations: Dictionary<String, Double> = [
         Units.cubicInch : 61023.7,
